@@ -1,5 +1,4 @@
 C:\Users\Martin\Dropbox\Projects\GitHub\BigVariant\PxtlCa.BigVariant.Core\bin\Debug\PxtlCa.BigVariant.Core.dll
 C:\Users\Martin\Dropbox\Projects\GitHub\BigVariant\PxtlCa.BigVariant.Core\bin\Debug\PxtlCa.BigVariant.Core.pdb
-C:\Users\Martin\Dropbox\Projects\GitHub\BigVariant\PxtlCa.BigVariant.Core\obj\Debug\PxtlCa.BigVariant.Core.csprojResolveAssemblyReference.cache
 C:\Users\Martin\Dropbox\Projects\GitHub\BigVariant\PxtlCa.BigVariant.Core\obj\Debug\PxtlCa.BigVariant.Core.dll
 C:\Users\Martin\Dropbox\Projects\GitHub\BigVariant\PxtlCa.BigVariant.Core\obj\Debug\PxtlCa.BigVariant.Core.pdb

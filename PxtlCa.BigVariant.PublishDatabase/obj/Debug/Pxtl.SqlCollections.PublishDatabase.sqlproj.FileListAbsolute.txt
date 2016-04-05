@@ -1,8 +1,0 @@
-C:\Users\Martin\Dropbox\Projects\GitHub\SqlCollections\Pxtl.SqlCollections.PublishDatabase\bin\Debug\Pxtl.SqlCollections.PublishDatabase.dacpac
-C:\Users\Martin\Dropbox\Projects\GitHub\SqlCollections\Pxtl.SqlCollections.PublishDatabase\bin\Debug\Pxtl.SqlCollections.PublishDatabase.dll
-C:\Users\Martin\Dropbox\Projects\GitHub\SqlCollections\Pxtl.SqlCollections.PublishDatabase\bin\Debug\Pxtl.SqlCollections.PublishDatabase.pdb
-C:\Users\Martin\Dropbox\Projects\GitHub\SqlCollections\Pxtl.SqlCollections.PublishDatabase\bin\Debug\PxtlCa.SqlCollections.Core.dll
-C:\Users\Martin\Dropbox\Projects\GitHub\SqlCollections\Pxtl.SqlCollections.PublishDatabase\bin\Debug\PxtlCa.SqlCollections.Core.pdb
-C:\Users\Martin\Dropbox\Projects\GitHub\SqlCollections\Pxtl.SqlCollections.PublishDatabase\obj\Debug\Pxtl.SqlCollections.PublishDatabase.sqlprojResolveAssemblyReference.cache
-C:\Users\Martin\Dropbox\Projects\GitHub\SqlCollections\Pxtl.SqlCollections.PublishDatabase\obj\Debug\Pxtl.SqlCollections.PublishDatabase.dll
-C:\Users\Martin\Dropbox\Projects\GitHub\SqlCollections\Pxtl.SqlCollections.PublishDatabase\obj\Debug\Pxtl.SqlCollections.PublishDatabase.pdb

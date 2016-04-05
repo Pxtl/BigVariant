@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PxtlCa.BigVariant.Core", "P
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PxtlCa.BigVariant.PublishDatabase", "PxtlCa.BigVariant.PublishDatabase\PxtlCa.BigVariant.PublishDatabase.sqlproj", "{D8536066-E561-4059-AD96-B09B93C4DB06}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9CB54D49-0D43-462C-B250-38BEB7F38312}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
