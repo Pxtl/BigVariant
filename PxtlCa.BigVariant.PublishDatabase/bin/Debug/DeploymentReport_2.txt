@@ -1,0 +1,20 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Alter
+       [PxtlCa.SqlCollections.Core] (Assembly)
+     Create
+       [dbo].[BigVariant] (User-Defined Type)
+       [dbo].[BigVariantFromSQL_VARIANT] (Function)
+       [dbo].[BigVariantFromVARCHAR] (Function)
+       [dbo].[BigVariantFromXML] (Function)
+
+** Supporting actions

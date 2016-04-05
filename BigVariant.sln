@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PxtlCa.BigVariant.Core", "PxtlCa.BigVariant.Core\PxtlCa.BigVariant.Core.csproj", "{60343A86-20A9-4A74-BB7F-FB3A46031C40}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PxtlCa.BigVariant.PublishDatabase", "PxtlCa.BigVariant.PublishDatabase\PxtlCa.BigVariant.PublishDatabase.sqlproj", "{D8536066-E561-4059-AD96-B09B93C4DB06}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60343A86-20A9-4A74-BB7F-FB3A46031C40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60343A86-20A9-4A74-BB7F-FB3A46031C40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60343A86-20A9-4A74-BB7F-FB3A46031C40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60343A86-20A9-4A74-BB7F-FB3A46031C40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8536066-E561-4059-AD96-B09B93C4DB06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8536066-E561-4059-AD96-B09B93C4DB06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8536066-E561-4059-AD96-B09B93C4DB06}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D8536066-E561-4059-AD96-B09B93C4DB06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8536066-E561-4059-AD96-B09B93C4DB06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8536066-E561-4059-AD96-B09B93C4DB06}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

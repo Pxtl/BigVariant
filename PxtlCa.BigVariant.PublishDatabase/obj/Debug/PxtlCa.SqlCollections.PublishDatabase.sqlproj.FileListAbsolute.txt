@@ -1,0 +1,12 @@
+C:\Users\Martin\Dropbox\Projects\GitHub\SqlCollections\Pxtl.SqlCollections.PublishDatabase\bin\Debug\PxtlCa.SqlCollections.PublishDatabase.dacpac
+C:\Users\Martin\Dropbox\Projects\GitHub\SqlCollections\Pxtl.SqlCollections.PublishDatabase\bin\Debug\Pxtl.SqlCollections.PublishDatabase.dll
+C:\Users\Martin\Dropbox\Projects\GitHub\SqlCollections\Pxtl.SqlCollections.PublishDatabase\bin\Debug\Pxtl.SqlCollections.PublishDatabase.pdb
+C:\Users\Martin\Dropbox\Projects\GitHub\SqlCollections\Pxtl.SqlCollections.PublishDatabase\bin\Debug\PxtlCa.SqlCollections.Core.dll
+C:\Users\Martin\Dropbox\Projects\GitHub\SqlCollections\Pxtl.SqlCollections.PublishDatabase\bin\Debug\PxtlCa.SqlCollections.Core.pdb
+C:\Users\Martin\Dropbox\Projects\GitHub\SqlCollections\Pxtl.SqlCollections.PublishDatabase\obj\Debug\PxtlCa.SqlCollections.PublishDatabase.sqlprojResolveAssemblyReference.cache
+C:\Users\Martin\Dropbox\Projects\GitHub\SqlCollections\Pxtl.SqlCollections.PublishDatabase\obj\Debug\Pxtl.SqlCollections.PublishDatabase.dll
+C:\Users\Martin\Dropbox\Projects\GitHub\SqlCollections\Pxtl.SqlCollections.PublishDatabase\obj\Debug\Pxtl.SqlCollections.PublishDatabase.pdb
+C:\Users\Martin\Dropbox\Projects\GitHub\SqlCollections\Pxtl.SqlCollections.PublishDatabase\obj\Debug\Model.xml
+C:\Users\Martin\Dropbox\Projects\GitHub\SqlCollections\Pxtl.SqlCollections.PublishDatabase\obj\Debug\refactor.xml
+C:\Users\Martin\Dropbox\Projects\GitHub\SqlCollections\Pxtl.SqlCollections.PublishDatabase\obj\Debug\postdeploy.sql
+C:\Users\Martin\Dropbox\Projects\GitHub\SqlCollections\Pxtl.SqlCollections.PublishDatabase\obj\Debug\predeploy.sql

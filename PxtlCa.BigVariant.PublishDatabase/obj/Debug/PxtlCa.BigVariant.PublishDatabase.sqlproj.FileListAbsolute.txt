@@ -1,0 +1,12 @@
+C:\Users\Martin\Dropbox\Projects\GitHub\BigVariant\PxtlCa.BigVariant.PublishDatabase\bin\Debug\PxtlCa.BigVariant.PublishDatabase.dacpac
+C:\Users\Martin\Dropbox\Projects\GitHub\BigVariant\PxtlCa.BigVariant.PublishDatabase\bin\Debug\Pxtl.BigVariant.PublishDatabase.dll
+C:\Users\Martin\Dropbox\Projects\GitHub\BigVariant\PxtlCa.BigVariant.PublishDatabase\bin\Debug\Pxtl.BigVariant.PublishDatabase.pdb
+C:\Users\Martin\Dropbox\Projects\GitHub\BigVariant\PxtlCa.BigVariant.PublishDatabase\bin\Debug\PxtlCa.BigVariant.Core.dll
+C:\Users\Martin\Dropbox\Projects\GitHub\BigVariant\PxtlCa.BigVariant.PublishDatabase\bin\Debug\PxtlCa.BigVariant.Core.pdb
+C:\Users\Martin\Dropbox\Projects\GitHub\BigVariant\PxtlCa.BigVariant.PublishDatabase\obj\Debug\PxtlCa.BigVariant.PublishDatabase.sqlprojResolveAssemblyReference.cache
+C:\Users\Martin\Dropbox\Projects\GitHub\BigVariant\PxtlCa.BigVariant.PublishDatabase\obj\Debug\Pxtl.BigVariant.PublishDatabase.dll
+C:\Users\Martin\Dropbox\Projects\GitHub\BigVariant\PxtlCa.BigVariant.PublishDatabase\obj\Debug\Pxtl.BigVariant.PublishDatabase.pdb
+C:\Users\Martin\Dropbox\Projects\GitHub\BigVariant\PxtlCa.BigVariant.PublishDatabase\obj\Debug\Model.xml
+C:\Users\Martin\Dropbox\Projects\GitHub\BigVariant\PxtlCa.BigVariant.PublishDatabase\obj\Debug\refactor.xml
+C:\Users\Martin\Dropbox\Projects\GitHub\BigVariant\PxtlCa.BigVariant.PublishDatabase\obj\Debug\postdeploy.sql
+C:\Users\Martin\Dropbox\Projects\GitHub\BigVariant\PxtlCa.BigVariant.PublishDatabase\obj\Debug\predeploy.sql
