@@ -30,6 +30,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <!-- sign with key only in RELEASE mode -->
+    <AssemblyOriginatorKeyFile>PxtlCaPersonal.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -42,6 +49,9 @@
     <Compile Include="SqlTypeExtensions.cs" />
     <Compile Include="SqlTypeHelpers.cs" />
     <Compile Include="UserDefinedFunctions_BigVariant.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PxtlCaPersonal.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
