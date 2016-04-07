@@ -2,7 +2,7 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
-    <TargetDatabaseName>PxtlCa.BigVariant.Database</TargetDatabaseName>
+    <TargetDatabaseName>PxtlCa.BigVariant.PublishDatabase</TargetDatabaseName>
     <DeployScriptFileName>PxtlCa.BigVariant.PublishDatabase.sql</DeployScriptFileName>
     <TargetConnectionString>Data Source=.;Integrated Security=True;Pooling=False</TargetConnectionString>
     <ProfileVersionNumber>1</ProfileVersionNumber>

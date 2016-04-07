@@ -5,7 +5,7 @@ using System.Data.SqlTypes;
 using System.IO;
 using System.Xml;
 
-namespace PxtlCa.SqlCollections.Core
+namespace PxtlCa.BigVariant.Core
 {
     public enum SqlTypeEnum
     {

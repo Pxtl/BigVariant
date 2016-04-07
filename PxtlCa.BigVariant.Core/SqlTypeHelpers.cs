@@ -6,7 +6,7 @@ using System.IO;
 using System.Xml;
 using System.Data;
 
-namespace PxtlCa.SqlCollections.Core
+namespace PxtlCa.BigVariant.Core
 {
     public abstract class SqlTypeHelper
     {

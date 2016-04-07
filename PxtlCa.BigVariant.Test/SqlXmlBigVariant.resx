@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SmallXmlIntoBigVariant_TestAction.SqlScript" xml:space="preserve">
+    <value>DECLARE @testInput Xml
+DECLARE @testVar BigVariant
+SET @testInput = convert(Xml
+	, '&lt;?xml version="1.0"?&gt;&lt;catalog&gt;' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10) 
+	+ '&lt;book id="bk101"&gt;&lt;author&gt;Gambardella, Matthew&lt;/author&gt;&lt;title&gt;XML Developer''s Guide&lt;/title&gt;&lt;genre&gt;Computer&lt;/genre&gt;&lt;price&gt;44.95&lt;/price&gt;&lt;publish_date&gt;2000-10-01&lt;/publish_date&gt;&lt;description&gt;An in-depth look at creating applications with XML.&lt;/description&gt;&lt;/book&gt;' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10) 
+	+ '&lt;/catalog&gt;' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10) 
+)
+SET @testVar = dbo.BigVariantFromXml(@testInput)
+SELECT 'success' WHERE CONVERT(NVARCHAR(4000), @testInput) = CONVERT(NVARCHAR(4000), @testVar.AsXml)</value>
+  </data>
+  <data name="LargeXmlIntoBigVariant_TestAction.SqlScript" xml:space="preserve">
+    <value>DECLARE @testInput Xml
+DECLARE @testVar BigVariant
+SET @testInput = convert(Xml
+	, '&lt;catalog&gt;' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10) 
+	+ '&lt;book id="bk101"&gt;&lt;author&gt;Gambardella, Matthew&lt;/author&gt;&lt;title&gt;XML Developer''s Guide&lt;/title&gt;&lt;genre&gt;Computer&lt;/genre&gt;&lt;price&gt;44.95&lt;/price&gt;&lt;publish_date&gt;2000-10-01&lt;/publish_date&gt;&lt;description&gt;An in-depth look at creating applications with XML.&lt;/description&gt;&lt;/book&gt;' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10) 
+	+ '&lt;book id="bk102"&gt;&lt;author&gt;Ralls, Kim&lt;/author&gt;&lt;title&gt;Midnight Rain&lt;/title&gt;&lt;genre&gt;Fantasy&lt;/genre&gt;&lt;price&gt;5.95&lt;/price&gt;&lt;publish_date&gt;2000-12-16&lt;/publish_date&gt;&lt;description&gt;A former architect battles corporate zombies, an evil sorceress, and her own childhood to become queen of the world.&lt;/description&gt;&lt;/book&gt;' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10) 
+	+ '&lt;book id="bk103"&gt;&lt;author&gt;Corets, Eva&lt;/author&gt;&lt;title&gt;Maeve Ascendant&lt;/title&gt;&lt;genre&gt;Fantasy&lt;/genre&gt;&lt;price&gt;5.95&lt;/price&gt;&lt;publish_date&gt;2000-11-17&lt;/publish_date&gt;&lt;description&gt;After the collapse of a nanotechnology society in England, the young survivors lay the foundation for a new society.&lt;/description&gt;&lt;/book&gt;' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10) 
+	+ '&lt;book id="bk104"&gt;&lt;author&gt;Corets, Eva&lt;/author&gt;&lt;title&gt;Oberon''s Legacy&lt;/title&gt;&lt;genre&gt;Fantasy&lt;/genre&gt;&lt;price&gt;5.95&lt;/price&gt;&lt;publish_date&gt;2001-03-10&lt;/publish_date&gt;&lt;description&gt;In post-apocalypse England, the mysterious agent known only as Oberon helps to create a new life for the inhabitants of London. Sequel to Maeve Ascendant.&lt;/description&gt;&lt;/book&gt;' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10) 
+	+ '&lt;book id="bk105"&gt;&lt;author&gt;Corets, Eva&lt;/author&gt;&lt;title&gt;The Sundered Grail&lt;/title&gt;&lt;genre&gt;Fantasy&lt;/genre&gt;&lt;price&gt;5.95&lt;/price&gt;&lt;publish_date&gt;2001-09-10&lt;/publish_date&gt;&lt;description&gt;The two daughters of Maeve, half-sisters, battle one another for control of England. Sequel to Oberon''s Legacy.&lt;/description&gt;&lt;/book&gt;' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10) 
+	+ '&lt;book id="bk106"&gt;&lt;author&gt;Randall, Cynthia&lt;/author&gt;&lt;title&gt;Lover Birds&lt;/title&gt;&lt;genre&gt;Romance&lt;/genre&gt;&lt;price&gt;4.95&lt;/price&gt;&lt;publish_date&gt;2000-09-02&lt;/publish_date&gt;&lt;description&gt;When Carla meets Paul at an ornithology conference, tempers fly as feathers get ruffled.&lt;/description&gt;&lt;/book&gt;' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10) 
+	+ '&lt;book id="bk107"&gt;&lt;author&gt;Thurman, Paula&lt;/author&gt;&lt;title&gt;Splish Splash&lt;/title&gt;&lt;genre&gt;Romance&lt;/genre&gt;&lt;price&gt;4.95&lt;/price&gt;&lt;publish_date&gt;2000-11-02&lt;/publish_date&gt;&lt;description&gt;A deep sea diver finds true love twenty thousand leagues beneath the sea.&lt;/description&gt;&lt;/book&gt;' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10) 
+	+ '&lt;book id="bk108"&gt;&lt;author&gt;Knorr, Stefan&lt;/author&gt;&lt;title&gt;Creepy Crawlies&lt;/title&gt;&lt;genre&gt;Horror&lt;/genre&gt;&lt;price&gt;4.95&lt;/price&gt;&lt;publish_date&gt;2000-12-06&lt;/publish_date&gt;&lt;description&gt;An anthology of horror stories about roaches, centipedes, scorpions and other insects.&lt;/description&gt;&lt;/book&gt;' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10) 
+	+ '&lt;book id="bk109"&gt;&lt;author&gt;Kress, Peter&lt;/author&gt;&lt;title&gt;Paradox Lost&lt;/title&gt;&lt;genre&gt;Science Fiction&lt;/genre&gt;&lt;price&gt;6.95&lt;/price&gt;&lt;publish_date&gt;2000-11-02&lt;/publish_date&gt;&lt;description&gt;After an inadvertant trip through a Heisenberg Uncertainty Device, James Salway discovers the problems of being quantum.&lt;/description&gt;&lt;/book&gt;' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10) 
+	+ '&lt;book id="bk110"&gt;&lt;author&gt;O''Brien, Tim&lt;/author&gt;&lt;title&gt;Microsoft .NET: The Programming Bible&lt;/title&gt;&lt;genre&gt;Computer&lt;/genre&gt;&lt;price&gt;36.95&lt;/price&gt;&lt;publish_date&gt;2000-12-09&lt;/publish_date&gt;&lt;description&gt;Microsoft''s .NET initiative is explored in detail in this deep programmer''s reference.&lt;/description&gt;&lt;/book&gt;' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10) 
+	+ '&lt;book id="bk111"&gt;&lt;author&gt;O''Brien, Tim&lt;/author&gt;&lt;title&gt;MSXML3: A Comprehensive Guide&lt;/title&gt;&lt;genre&gt;Computer&lt;/genre&gt;&lt;price&gt;36.95&lt;/price&gt;&lt;publish_date&gt;2000-12-01&lt;/publish_date&gt;&lt;description&gt;The Microsoft MSXML3 parser is covered in detail, with attention to XML DOM interfaces, XSLT processing, SAX and more.&lt;/description&gt;&lt;/book&gt;' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10) 
+	+ '&lt;book id="bk112"&gt;&lt;author&gt;Galos, Mike&lt;/author&gt;&lt;title&gt;Visual Studio 7: A Comprehensive Guide&lt;/title&gt;&lt;genre&gt;Computer&lt;/genre&gt;&lt;price&gt;49.95&lt;/price&gt;&lt;publish_date&gt;2001-04-16&lt;/publish_date&gt;&lt;description&gt;Microsoft Visual Studio 7 is explored in depth, looking at how Visual Basic, Visual C++, C#, and ASP+ are integrated into a comprehensive development environment.&lt;/description&gt;&lt;/book&gt;' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10) 
+	+ '&lt;lipsum&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/lipsum&gt;' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10) 
+	+ '&lt;/catalog&gt;'
+)
+SET @testVar = dbo.BigVariantFromXml(@testInput)
+SELECT 'success' WHERE RIGHT(CONVERT(NVARCHAR(MAX), @testVar.AsXml), 10) = '&lt;/catalog&gt;'
+SELECT 'success' WHERE CONVERT(NVARCHAR(MAX), @testInput) = CONVERT(NVARCHAR(MAX), @testVar.AsXml)</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+</root>

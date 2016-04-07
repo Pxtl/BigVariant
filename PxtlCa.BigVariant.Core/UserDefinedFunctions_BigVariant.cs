@@ -4,7 +4,7 @@ using System.Data.SqlTypes;
 using System.Text;
 using Microsoft.SqlServer.Server;
 
-namespace PxtlCa.SqlCollections.Core
+namespace PxtlCa.BigVariant.Core
 {
     public static partial class UserDefinedFunctions
     {

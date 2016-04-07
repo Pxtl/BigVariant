@@ -9,7 +9,7 @@ using System.Runtime.Serialization;
 using System.Xml;
 using System.Data;
 
-namespace PxtlCa.SqlCollections.Core
+namespace PxtlCa.BigVariant.Core
 {
     [SqlUserDefinedType(Format.UserDefined, IsFixedLength = false, MaxByteSize = -1)]
     public struct BigVariant : IBinarySerialize, INullable
@@ -33,10 +33,13 @@ namespace PxtlCa.SqlCollections.Core
         private bool _IsNull { get; }
         public bool IsNull { get { return _IsNull; } }
 
+        [SqlFacet(IsNullable = true)]
         public SqlXml AsXml { get { return (SqlXml)Value; } }
 
+        [SqlFacet(IsFixedLength = false, IsNullable = true, MaxSize = -1)]
         public SqlString AsString { get { return (SqlString)Value; } }
 
+        [SqlFacet(IsFixedLength = false, IsNullable = true, MaxSize = -1)]
         public SqlBinary AsBinary { get { return (SqlBinary)Value; } }
 
         public static BigVariant Null
