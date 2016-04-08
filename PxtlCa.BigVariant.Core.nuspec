@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>PxtlCa.BigVariant.Core</id>
-        <version>0.1.0.0</version>
+        <version>0.1.0.1</version>
         <title>PxtlCa.BigVariant.Core</title>
         <authors>Martin Zarate</authors>
         <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
