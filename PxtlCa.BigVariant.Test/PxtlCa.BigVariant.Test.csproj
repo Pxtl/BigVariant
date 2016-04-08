@@ -51,6 +51,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="SqlBinaryBigVariant.cs">
+      <SubType>Designer</SubType>
+    </Compile>
     <Compile Include="SqlStringBigVariant.cs">
       <SubType>Designer</SubType>
     </Compile>
@@ -64,6 +67,9 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="SqlBinaryBigVariant.resx">
+      <DependentUpon>SqlBinaryBigVariant.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SqlStringBigVariant.resx">
       <DependentUpon>SqlStringBigVariant.cs</DependentUpon>
     </EmbeddedResource>

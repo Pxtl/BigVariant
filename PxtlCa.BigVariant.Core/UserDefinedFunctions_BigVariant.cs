@@ -21,13 +21,13 @@ namespace PxtlCa.BigVariant.Core
         }
 
         [SqlFunction]
-        public static BigVariant BigVariantFromString(SqlString value)
+        public static BigVariant BigVariantFromString([SqlFacet(MaxSize = -1)] SqlString value)
         {
             return new BigVariant(value);
         }
 
         [SqlFunction]
-        public static BigVariant BigVariantFromBinary(SqlBinary value)
+        public static BigVariant BigVariantFromBinary([SqlFacet(MaxSize = -1)] SqlBinary value)
         {
             return new BigVariant(value);
         }
