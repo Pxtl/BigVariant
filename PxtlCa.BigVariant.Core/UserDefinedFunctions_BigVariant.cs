@@ -16,7 +16,7 @@ namespace PxtlCa.BigVariant.Core
         /// </summary>
         /// <param name="value">an XML object to wrap in a BigVariant</param>
         /// <returns>A BigVariant containing the given XML object</returns>
-        /// <example>
+        /// <example><![CDATA[
         /// DECLARE @testInput Xml
         /// DECLARE @testVar BigVariant
         /// SET @testInput = convert(Xml       
@@ -25,7 +25,7 @@ namespace PxtlCa.BigVariant.Core
         ///	+ '</catalog>' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10)
         /// )
         /// SET @testVar = dbo.BigVariantFromXml(@testInput)
-        /// </example>
+        /// ]]></example>
         [SqlFunction]
         public static BigVariant BigVariantFromXml(SqlXml value)
         {

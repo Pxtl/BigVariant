@@ -66,6 +66,32 @@
 
 
 ---
+##### M:PxtlCa.BigVariant.Core.UserDefinedFunctions.BigVariantFromXml(System.Data.SqlTypes.SqlXml)
+
+ Take the given XML typed SQL object and convert it into a BigVariant. 
+
+|Name | Description |
+|-----|------|
+|value: |an XML object to wrap in a BigVariant|
+Returns: A BigVariant containing the given XML object
+
+_C# code_
+
+```c#
+    DECLARE @testInput Xml
+    DECLARE @testVar BigVariant
+    SET @testInput = convert(Xml       
+    , '<?xml version="1.0"?><catalog>' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10)
+    + '<book id="bk101"><author>Gambardella, Matthew</author><title>XML Developer''s Guide</title><genre>Computer</genre><price>44.95</price><publish_date>2000-10-01</publish_date><description>An in-depth look at creating applications with XML.</description></book>' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10)
+    + '</catalog>' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10)
+    )
+    SET @testVar = dbo.BigVariantFromXml(@testInput)
+    
+```
+
+
+
+---
 ##### M:PxtlCa.BigVariant.Core.UserDefinedFunctions.BigVariantFromVariant(System.Object)
 
  Take the given SQL_VARIANT object and convert it into a BigVariant. 
