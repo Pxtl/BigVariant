@@ -52,6 +52,10 @@ Configure the publisher to connect to your database and click **publish**.
 
 SQL scripts and DACPACs for publishing have not been set up as part of the standard build-process yet.
 
+# Usage
+
+See the [generated XmlDoc file](Docs/PxtlCa.BigVariant.Core.GeneratedXmlDoc.md).
+
 # On PxtlCa.pfx
 
 The assembly is signed with a strong name in Release mode, but I (MZ) am keeping my PFX file private.  
