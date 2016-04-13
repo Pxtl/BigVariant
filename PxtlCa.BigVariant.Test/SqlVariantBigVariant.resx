@@ -127,7 +127,7 @@ SELECT 'success' WHERE @testInput = @testVar.AsVariant</value>
   <data name="DateTime2IntoBigVariant_TestAction.SqlScript" xml:space="preserve">
     <value>DECLARE @testInput DateTime2
 DECLARE @testVar BigVariant
-SET @testInput = convert(DateTime2, '1001-01-01 11:59:00 PM')
+SET @testInput = convert(DateTime2, '0001-01-01 11:59:00 PM')
 SET @testVar = dbo.BigVariantFromDateTime2(@testInput)
 SELECT 'success' WHERE @testInput = @testVar.AsDateTime2</value>
   </data>

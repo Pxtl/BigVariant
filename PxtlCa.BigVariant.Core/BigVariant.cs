@@ -48,6 +48,7 @@ namespace PxtlCa.BigVariant.Core
         /// If the BigVariant contains a SQL_VARIANT-compatible type, get its contents.
         /// Will throw an exception if the type is not SQL_VARIANT-compatible.
         /// </summary>
+        /// <remarks>DATETIME2s will be converted to DateTimes as interrim, use AsDateTime2 if you need DATETIME2s</remarks>
         [SqlFacet(IsNullable = true)]
         public object AsVariant { get { return Value; } }
 

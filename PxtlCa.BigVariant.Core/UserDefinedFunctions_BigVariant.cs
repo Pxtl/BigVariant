@@ -37,6 +37,7 @@ namespace PxtlCa.BigVariant.Core
         /// </summary>
         /// <param name="value">a SQL_VARIANT to wrap in a BigVariant</param>
         /// <returns>A BigVariant containing the given SQL_VARIANT</returns>
+        /// <remarks>DateTime2s will be converted to DateTimes as intermediate, use BigVariantFromDateTime2 for proper datetime2.</remarks>
         [SqlFunction]
         public static BigVariant BigVariantFromVariant([SqlFacet(IsNullable = true)] Object value)
         {
