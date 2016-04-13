@@ -52,6 +52,13 @@ namespace PxtlCa.BigVariant.Core
         public object AsVariant { get { return Value; } }
 
         /// <summary>
+        /// If the BigVariant contains a DATETIME2 (DateTime in CLR), get its contents.
+        /// Will throw an exception if the type is not DATETIME2.
+        /// </summary>
+        [SqlFacet(Scale = 7)] //Specifying scale makes it a datetime 2.  Surprise!
+        public DateTime? AsDateTime2 { get { return (DateTime?)Value; } }
+
+        /// <summary>
         /// If the BigVariant contains XML, get its contents.
         /// Will throw an exception if the type is not XML.
         /// </summary>

@@ -24,6 +24,10 @@ namespace PxtlCa.BigVariant.Core
                     return new SqlByteHelper();
                 case SqlTypeEnum.SqlDateTime:
                     return new SqlDateTimeHelper();
+                case SqlTypeEnum.DateTime:
+                    return new DateTimeHelper();
+                case SqlTypeEnum.DateTimeOffset:
+                    return new DateTimeOffsetHelper();
                 case SqlTypeEnum.SqlDecimal:
                     return new SqlDecimalHelper();
                 case SqlTypeEnum.SqlDouble:
@@ -59,6 +63,8 @@ namespace PxtlCa.BigVariant.Core
                 (type == typeof(SqlBoolean)) ? SqlTypeEnum.SqlBoolean :
                 (type == typeof(SqlByte)) ? SqlTypeEnum.SqlByte :
                 (type == typeof(SqlDateTime)) ? SqlTypeEnum.SqlDateTime :
+                (type == typeof(DateTime)) ? SqlTypeEnum.DateTime :
+                (type == typeof(DateTimeOffset)) ? SqlTypeEnum.DateTimeOffset :
                 (type == typeof(SqlDecimal)) ? SqlTypeEnum.SqlDecimal :
                 (type == typeof(SqlDouble)) ? SqlTypeEnum.SqlDouble :
                 (type == typeof(SqlGuid)) ? SqlTypeEnum.SqlGuid :
@@ -74,7 +80,7 @@ namespace PxtlCa.BigVariant.Core
             if (typeEnum == SqlTypeEnum.SqlNull)
             {
                 throw new ArgumentException(
-                    $"Not a valid SQL type for BigVariant",
+                    $@"""{type.Name}"" is not a valid SQL type for BigVariant",
                     nameof(type)
                     );
             }

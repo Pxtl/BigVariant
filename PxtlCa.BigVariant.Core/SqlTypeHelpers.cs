@@ -94,6 +94,42 @@ namespace PxtlCa.BigVariant.Core
         protected override int GetHashCodeImpl(SqlDateTime value) { return value.Value.GetHashCode(); }
     }
 
+    public class DateTimeHelper : TypedSqlTypeHelper<DateTime>
+    {
+        public override SqlTypeEnum SqlType { get { return SqlTypeEnum.DateTime; } }
+        public override object Read(BinaryReader r)
+        {
+            var ticks = r.ReadInt64();
+            var kind = (DateTimeKind)r.ReadInt32();
+            return new DateTime(ticks, kind);
+        }
+        protected override void WriteImpl(BinaryWriter w, DateTime value)
+        {
+            w.Write(value.Ticks);
+            w.Write((int)value.Kind);
+        }
+        protected override string ToStringImpl(DateTime value) { return value.ToString(); }
+        protected override int GetHashCodeImpl(DateTime value) { return value.GetHashCode(); }
+    }
+
+    public class DateTimeOffsetHelper : TypedSqlTypeHelper<DateTimeOffset>
+    {
+        public override SqlTypeEnum SqlType { get { return SqlTypeEnum.DateTimeOffset; } }
+        public override object Read(BinaryReader r)
+        {
+            var ticks = r.ReadInt64();
+            var offset = new TimeSpan(r.ReadInt64());
+            return new DateTimeOffset(ticks, offset);
+        }
+        protected override void WriteImpl(BinaryWriter w, DateTimeOffset value)
+        {
+            w.Write(value.Ticks);
+            w.Write(value.Offset.Ticks);
+        }
+        protected override string ToStringImpl(DateTimeOffset value) { return value.ToString(); }
+        protected override int GetHashCodeImpl(DateTimeOffset value) { return value.GetHashCode(); }
+    }
+
     public class SqlDecimalHelper : TypedSqlTypeHelper<SqlDecimal>
     {
         public override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlDecimal; } }

@@ -28,24 +28,6 @@ namespace PxtlCa.BigVariant.Test
         {
             base.CleanupTest();
         }
-
-        [TestMethod()]
-        public void SqlTest1()
-        {
-            SqlDatabaseTestActions testActions = this.SqlTest1Data;
-            // Execute the pre-test script
-            // 
-            System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
-            SqlExecutionResult[] pretestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PretestAction);
-            // Execute the test script
-            // 
-            System.Diagnostics.Trace.WriteLineIf((testActions.TestAction != null), "Executing test script...");
-            SqlExecutionResult[] testResults = TestService.Execute(this.ExecutionContext, this.PrivilegedContext, testActions.TestAction);
-            // Execute the post-test script
-            // 
-            System.Diagnostics.Trace.WriteLineIf((testActions.PosttestAction != null), "Executing post-test script...");
-            SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
-        }
         [TestMethod()]
         public void LargeBinaryIntoBigVariant()
         {
@@ -82,16 +64,9 @@ namespace PxtlCa.BigVariant.Test
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction LargeBinaryIntoBigVariant_TestAction;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SqlBinaryBigVariant));
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition notEmptyResultSetCondition1;
-            this.SqlTest1Data = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
             this.LargeBinaryIntoBigVariantData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
             LargeBinaryIntoBigVariant_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
             notEmptyResultSetCondition1 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition();
-            // 
-            // SqlTest1Data
-            // 
-            this.SqlTest1Data.PosttestAction = null;
-            this.SqlTest1Data.PretestAction = null;
-            this.SqlTest1Data.TestAction = null;
             // 
             // LargeBinaryIntoBigVariantData
             // 
@@ -127,8 +102,6 @@ namespace PxtlCa.BigVariant.Test
         // public static void MyClassCleanup() { }
         //
         #endregion
-
-        private SqlDatabaseTestActions SqlTest1Data;
         private SqlDatabaseTestActions LargeBinaryIntoBigVariantData;
     }
 }

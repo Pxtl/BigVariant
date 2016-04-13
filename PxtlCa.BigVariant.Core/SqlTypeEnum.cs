@@ -24,6 +24,8 @@ namespace PxtlCa.BigVariant.Core
         SqlMoney,
         SqlSingle,
         SqlString,
-        SqlXml
+        SqlXml,
+        DateTime,
+        DateTimeOffset
     }
 }

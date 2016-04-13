@@ -59,6 +59,9 @@
     </Compile>
     <Compile Include="SqlDatabaseSetup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlVariantBigVariant.cs">
+      <SubType>Designer</SubType>
+    </Compile>
     <Compile Include="SqlXmlBigVariant.cs">
       <SubType>Designer</SubType>
     </Compile>
@@ -72,6 +75,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SqlStringBigVariant.resx">
       <DependentUpon>SqlStringBigVariant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlVariantBigVariant.resx">
+      <DependentUpon>SqlVariantBigVariant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SqlXmlBigVariant.resx">
       <DependentUpon>SqlXmlBigVariant.cs</DependentUpon>

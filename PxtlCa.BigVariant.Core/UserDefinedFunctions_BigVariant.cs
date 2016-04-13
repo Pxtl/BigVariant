@@ -27,7 +27,7 @@ namespace PxtlCa.BigVariant.Core
         /// SET @testVar = dbo.BigVariantFromXml(@testInput)
         /// ]]></example>
         [SqlFunction]
-        public static BigVariant BigVariantFromXml(SqlXml value)
+        public static BigVariant BigVariantFromXml([SqlFacet(IsNullable = true)] SqlXml value)
         {
             return new BigVariant(value);
         }
@@ -38,7 +38,18 @@ namespace PxtlCa.BigVariant.Core
         /// <param name="value">a SQL_VARIANT to wrap in a BigVariant</param>
         /// <returns>A BigVariant containing the given SQL_VARIANT</returns>
         [SqlFunction]
-        public static BigVariant BigVariantFromVariant(Object value)
+        public static BigVariant BigVariantFromVariant([SqlFacet(IsNullable = true)] Object value)
+        {
+            return new BigVariant(value);
+        }
+
+        /// <summary>
+        /// Take the given DATETIME2 object and convert it into a BigVariant.
+        /// </summary>
+        /// <param name="value">a DATETIME2 to wrap in a BigVariant</param>
+        /// <returns>A BigVariant containing the given DATETIME2</returns>
+        [SqlFunction]
+        public static BigVariant BigVariantFromDateTime2([SqlFacet(IsNullable = true, Scale = 7)] DateTime? value) //Specifying scale makes it a datetime 2.  Surprise!
         {
             return new BigVariant(value);
         }
@@ -58,7 +69,7 @@ namespace PxtlCa.BigVariant.Core
         /// SET @testVar = dbo.BigVariantFromString(@testString)
         /// </example>
         [SqlFunction]
-        public static BigVariant BigVariantFromString([SqlFacet(MaxSize = -1)] SqlString value)
+        public static BigVariant BigVariantFromString([SqlFacet(MaxSize = -1, IsNullable = true)] SqlString value)
         {
             return new BigVariant(value);
         }
@@ -69,7 +80,7 @@ namespace PxtlCa.BigVariant.Core
         /// <param name="value">an VARBINARY(MAX) or IMAGE or other binary to wrap in a BigVariant</param>
         /// <returns>A BigVariant containing the given VARBINARY(MAX) or IMAGE or other binary</returns>
         [SqlFunction]
-        public static BigVariant BigVariantFromBinary([SqlFacet(MaxSize = -1)] SqlBinary value)
+        public static BigVariant BigVariantFromBinary([SqlFacet(MaxSize = -1, IsNullable = true)] SqlBinary value)
         {
             return new BigVariant(value);
         }
