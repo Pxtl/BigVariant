@@ -39,6 +39,7 @@
     <!-- sign with key only in RELEASE mode -->
     <AssemblyOriginatorKeyFile>PxtlCaPersonal.pfx</AssemblyOriginatorKeyFile>
     <DocumentationFile>bin\Release\PxtlCa.BigVariant.Core.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

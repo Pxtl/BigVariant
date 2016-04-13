@@ -20,6 +20,17 @@
 
 
 
+>DATETIME2s will be converted to DateTimes as interrim, use AsDateTime2 if you need DATETIME2s
+
+
+
+---
+##### P:PxtlCa.BigVariant.Core.BigVariant.AsDateTime2
+
+ If the BigVariant contains a DATETIME2 (DateTime in CLR), get its contents. Will throw an exception if the type is not DATETIME2. 
+
+
+
 ---
 ##### P:PxtlCa.BigVariant.Core.BigVariant.AsXml
 
@@ -100,6 +111,22 @@ _C# code_
 |-----|------|
 |value: |a SQL_VARIANT to wrap in a BigVariant|
 Returns: A BigVariant containing the given SQL_VARIANT
+
+
+
+>DateTime2s will be converted to DateTimes as intermediate, use BigVariantFromDateTime2 for proper datetime2.
+
+
+
+---
+##### M:PxtlCa.BigVariant.Core.UserDefinedFunctions.BigVariantFromDateTime2(System.Nullable{System.DateTime})
+
+ Take the given DATETIME2 object and convert it into a BigVariant. 
+
+|Name | Description |
+|-----|------|
+|value: |a DATETIME2 to wrap in a BigVariant|
+Returns: A BigVariant containing the given DATETIME2
 
 
 
