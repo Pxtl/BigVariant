@@ -57,6 +57,7 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="PostDeployment" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PxtlCa.BigVariant.Core\PxtlCa.BigVariant.Core.csproj">
@@ -71,6 +72,9 @@
     <None Include="local.publish.xml" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Script.PostDeployment.sql" />
+    <PostDeploy Include="Main.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PostDeployment\DateTime2.PostDeployment.sql" />
   </ItemGroup>
 </Project>
