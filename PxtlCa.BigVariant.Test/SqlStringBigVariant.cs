@@ -81,20 +81,37 @@ namespace PxtlCa.BigVariant.Test
         {
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction SmallSqlStringIntoBigVariant_TestAction;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SqlStringBigVariant));
-            Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction LargeSqlStringIntoBigVariant_TestAction;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition notEmptyResultSetCondition1;
+            Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction LargeSqlStringIntoBigVariant_TestAction;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition notEmptyResultSetCondition2;
             this.SmallSqlStringIntoBigVariantData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
             this.LargeSqlStringIntoBigVariantData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
             SmallSqlStringIntoBigVariant_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
-            LargeSqlStringIntoBigVariant_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
             notEmptyResultSetCondition1 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition();
+            LargeSqlStringIntoBigVariant_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
             notEmptyResultSetCondition2 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition();
             // 
             // SmallSqlStringIntoBigVariant_TestAction
             // 
             SmallSqlStringIntoBigVariant_TestAction.Conditions.Add(notEmptyResultSetCondition1);
             resources.ApplyResources(SmallSqlStringIntoBigVariant_TestAction, "SmallSqlStringIntoBigVariant_TestAction");
+            // 
+            // notEmptyResultSetCondition1
+            // 
+            notEmptyResultSetCondition1.Enabled = true;
+            notEmptyResultSetCondition1.Name = "notEmptyResultSetCondition1";
+            notEmptyResultSetCondition1.ResultSet = 1;
+            // 
+            // LargeSqlStringIntoBigVariant_TestAction
+            // 
+            LargeSqlStringIntoBigVariant_TestAction.Conditions.Add(notEmptyResultSetCondition2);
+            resources.ApplyResources(LargeSqlStringIntoBigVariant_TestAction, "LargeSqlStringIntoBigVariant_TestAction");
+            // 
+            // notEmptyResultSetCondition2
+            // 
+            notEmptyResultSetCondition2.Enabled = true;
+            notEmptyResultSetCondition2.Name = "notEmptyResultSetCondition2";
+            notEmptyResultSetCondition2.ResultSet = 1;
             // 
             // SmallSqlStringIntoBigVariantData
             // 
@@ -107,23 +124,6 @@ namespace PxtlCa.BigVariant.Test
             this.LargeSqlStringIntoBigVariantData.PosttestAction = null;
             this.LargeSqlStringIntoBigVariantData.PretestAction = null;
             this.LargeSqlStringIntoBigVariantData.TestAction = LargeSqlStringIntoBigVariant_TestAction;
-            // 
-            // LargeSqlStringIntoBigVariant_TestAction
-            // 
-            LargeSqlStringIntoBigVariant_TestAction.Conditions.Add(notEmptyResultSetCondition2);
-            resources.ApplyResources(LargeSqlStringIntoBigVariant_TestAction, "LargeSqlStringIntoBigVariant_TestAction");
-            // 
-            // notEmptyResultSetCondition1
-            // 
-            notEmptyResultSetCondition1.Enabled = true;
-            notEmptyResultSetCondition1.Name = "notEmptyResultSetCondition1";
-            notEmptyResultSetCondition1.ResultSet = 1;
-            // 
-            // notEmptyResultSetCondition2
-            // 
-            notEmptyResultSetCondition2.Enabled = true;
-            notEmptyResultSetCondition2.Name = "notEmptyResultSetCondition2";
-            notEmptyResultSetCondition2.ResultSet = 1;
         }
 
         #endregion

@@ -118,13 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="SmallSqlStringIntoBigVariant_TestAction.SqlScript" xml:space="preserve">
-    <value>DECLARE @testString NVARCHAR(2000)
-DECLARE @testVar BigVariant
-DECLARE @actualString NVARCHAR(2000)
-SET @testString = 'Silence is foo'
-SET @testVar = dbo.BigVariantFromVariant(@testString)
-SET @actualString = @testVar.AsString
-SELECT 'success' WHERE @testString = @actualString</value>
+    <value>DECLARE @testString NVARCHAR(2000) = 'Silence is foo'
+DECLARE @testVar BigVariant = dbo.BigVariantFromVariant(@testString)
+SELECT 'success' WHERE @testString = @testVar.AsString</value>
   </data>
   <data name="LargeSqlStringIntoBigVariant_TestAction.SqlScript" xml:space="preserve">
     <value>DECLARE @testString NVARCHAR(MAX)

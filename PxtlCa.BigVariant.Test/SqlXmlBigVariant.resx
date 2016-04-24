@@ -118,14 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="SmallXmlIntoBigVariant_TestAction.SqlScript" xml:space="preserve">
-    <value>DECLARE @testInput Xml
-DECLARE @testVar BigVariant
-SET @testInput = convert(Xml
+    <value>DECLARE @testInput Xml = convert(Xml
 	, '&lt;?xml version="1.0"?&gt;&lt;catalog&gt;' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10) 
 	+ '&lt;book id="bk101"&gt;&lt;author&gt;Gambardella, Matthew&lt;/author&gt;&lt;title&gt;XML Developer''s Guide&lt;/title&gt;&lt;genre&gt;Computer&lt;/genre&gt;&lt;price&gt;44.95&lt;/price&gt;&lt;publish_date&gt;2000-10-01&lt;/publish_date&gt;&lt;description&gt;An in-depth look at creating applications with XML.&lt;/description&gt;&lt;/book&gt;' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10) 
 	+ '&lt;/catalog&gt;' + CHAR(13)+CHAR(10) + CHAR(13)+CHAR(10) 
 )
-SET @testVar = dbo.BigVariantFromXml(@testInput)
+DECLARE @testVar BigVariant = dbo.BigVariantFromXml(@testInput)
 SELECT 'success' WHERE CONVERT(NVARCHAR(4000), @testInput) = CONVERT(NVARCHAR(4000), @testVar.AsXml)</value>
   </data>
   <data name="LargeXmlIntoBigVariant_TestAction.SqlScript" xml:space="preserve">

@@ -160,10 +160,8 @@ SET @testVar = dbo.BigVariantFromVariant(@testInput)
 SELECT 'success' WHERE @testInput = @testVar.AsVariant AND @testVar.Type = 'SqlInt64'</value>
   </data>
   <data name="BitIntoBigVariant_TestAction.SqlScript" xml:space="preserve">
-    <value>DECLARE @testInput bit
-DECLARE @testVar BigVariant
-SET @testInput = 1
-SET @testVar = dbo.BigVariantFromVariant(@testInput)
+    <value>DECLARE @testInput bit = 1
+DECLARE @testVar BigVariant = dbo.BigVariantFromVariant(@testInput)
 SELECT 'success' WHERE @testInput = @testVar.AsVariant AND @testVar.Type = 'SqlBoolean'</value>
   </data>
   <data name="FloatIntoBigVariant_TestAction.SqlScript" xml:space="preserve">
@@ -174,10 +172,8 @@ SET @testVar = dbo.BigVariantFromVariant(@testInput)
 SELECT 'success' WHERE @testInput = @testInput AND @testVar.Type = 'SqlSingle'</value>
   </data>
   <data name="DoubleIntoBigVariant_TestAction.SqlScript" xml:space="preserve">
-    <value>DECLARE @testInput float
-DECLARE @testVar BigVariant
-SET @testInput = 1.79E+308
-SET @testVar = dbo.BigVariantFromVariant(@testInput)
+    <value>DECLARE @testInput float = 1.79E+308
+DECLARE @testVar BigVariant = dbo.BigVariantFromVariant(@testInput)
 SELECT 'success' WHERE @testInput = @testVar.AsVariant</value>
   </data>
   <data name="CompareAllNumericTypes_TestAction.SqlScript" xml:space="preserve">

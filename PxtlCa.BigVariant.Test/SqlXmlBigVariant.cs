@@ -81,34 +81,28 @@ namespace PxtlCa.BigVariant.Test
         {
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction SmallXmlIntoBigVariant_TestAction;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SqlXmlBigVariant));
+            Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition notEmptyResultSetCondition2;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction LargeXmlIntoBigVariant_TestAction;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition notEmptyResultSetCondition1;
-            Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition notEmptyResultSetCondition2;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition notEmptyResultSetCondition3;
             this.SmallXmlIntoBigVariantData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
             this.LargeXmlIntoBigVariantData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
             SmallXmlIntoBigVariant_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
+            notEmptyResultSetCondition2 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition();
             LargeXmlIntoBigVariant_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
             notEmptyResultSetCondition1 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition();
-            notEmptyResultSetCondition2 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition();
             notEmptyResultSetCondition3 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition();
-            // 
-            // SmallXmlIntoBigVariantData
-            // 
-            this.SmallXmlIntoBigVariantData.PosttestAction = null;
-            this.SmallXmlIntoBigVariantData.PretestAction = null;
-            this.SmallXmlIntoBigVariantData.TestAction = SmallXmlIntoBigVariant_TestAction;
             // 
             // SmallXmlIntoBigVariant_TestAction
             // 
             SmallXmlIntoBigVariant_TestAction.Conditions.Add(notEmptyResultSetCondition2);
             resources.ApplyResources(SmallXmlIntoBigVariant_TestAction, "SmallXmlIntoBigVariant_TestAction");
             // 
-            // LargeXmlIntoBigVariantData
+            // notEmptyResultSetCondition2
             // 
-            this.LargeXmlIntoBigVariantData.PosttestAction = null;
-            this.LargeXmlIntoBigVariantData.PretestAction = null;
-            this.LargeXmlIntoBigVariantData.TestAction = LargeXmlIntoBigVariant_TestAction;
+            notEmptyResultSetCondition2.Enabled = true;
+            notEmptyResultSetCondition2.Name = "notEmptyResultSetCondition2";
+            notEmptyResultSetCondition2.ResultSet = 1;
             // 
             // LargeXmlIntoBigVariant_TestAction
             // 
@@ -122,17 +116,23 @@ namespace PxtlCa.BigVariant.Test
             notEmptyResultSetCondition1.Name = "notEmptyResultSetCondition1";
             notEmptyResultSetCondition1.ResultSet = 1;
             // 
-            // notEmptyResultSetCondition2
-            // 
-            notEmptyResultSetCondition2.Enabled = true;
-            notEmptyResultSetCondition2.Name = "notEmptyResultSetCondition2";
-            notEmptyResultSetCondition2.ResultSet = 1;
-            // 
             // notEmptyResultSetCondition3
             // 
             notEmptyResultSetCondition3.Enabled = true;
             notEmptyResultSetCondition3.Name = "notEmptyResultSetCondition3";
             notEmptyResultSetCondition3.ResultSet = 2;
+            // 
+            // SmallXmlIntoBigVariantData
+            // 
+            this.SmallXmlIntoBigVariantData.PosttestAction = null;
+            this.SmallXmlIntoBigVariantData.PretestAction = null;
+            this.SmallXmlIntoBigVariantData.TestAction = SmallXmlIntoBigVariant_TestAction;
+            // 
+            // LargeXmlIntoBigVariantData
+            // 
+            this.LargeXmlIntoBigVariantData.PosttestAction = null;
+            this.LargeXmlIntoBigVariantData.PretestAction = null;
+            this.LargeXmlIntoBigVariantData.TestAction = LargeXmlIntoBigVariant_TestAction;
         }
 
         #endregion

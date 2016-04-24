@@ -118,10 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DateTime2intoBigVariant_TestAction.SqlScript" xml:space="preserve">
-    <value>DECLARE @testInput DateTime2
-DECLARE @testVar BigVariant
-SET @testInput = convert(DateTime2, '0001-01-01 11:59:00 PM')
-SET @testVar = dbo.BigVariantFromDateTime2(@testInput)
+    <value>DECLARE @testInput DateTime2 = convert(DateTime2, '0001-01-01 11:59:00 PM')
+DECLARE @testVar BigVariant = dbo.BigVariantFromDateTime2(@testInput)
 SELECT 'success' WHERE @testInput = @testVar.AsDateTime2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
