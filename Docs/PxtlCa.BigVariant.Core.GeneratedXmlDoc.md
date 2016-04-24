@@ -7,13 +7,13 @@
 
 
 ---
-### P:PxtlCa.BigVariant.Core.BigVariant.Type
+#### P:PxtlCa.BigVariant.Core.BigVariant.Type
 
  The SQL CLR Type of the BigVariant, as a String accessible from SQL. See https://msdn.microsoft.com/en-us/library/ms131092.aspx for information about the types. 
 
-#### Example: 
+##### Example: 
 
-#####SQL code
+######SQL code
 
 ```
     DECLARE @testInput bit = 1
@@ -27,7 +27,7 @@
 
 
 ---
-### P:PxtlCa.BigVariant.Core.BigVariant.AsVariant
+#### P:PxtlCa.BigVariant.Core.BigVariant.AsVariant
 
  If the BigVariant contains a SQL_VARIANT-compatible type, get its contents. Will throw an exception if the type is not SQL_VARIANT-compatible. 
 
@@ -35,9 +35,9 @@
 
 >DATETIME2s will be converted to DateTimes as interrim, use AsDateTime2 if you need DATETIME2s
 
-#### Example: 
+##### Example: 
 
-#####SQL code
+######SQL code
 
 ```
     DECLARE @testInput float = 1.79E+308
@@ -52,13 +52,13 @@
 
 
 ---
-### P:PxtlCa.BigVariant.Core.BigVariant.AsDateTime2
+#### P:PxtlCa.BigVariant.Core.BigVariant.AsDateTime2
 
  If the BigVariant contains a DATETIME2 (DateTime in CLR), get its contents. Will throw an exception if the type is not DATETIME2. 
 
-#### Example:  DATETIME2 Unit Test 
+##### Example:  DATETIME2 Unit Test 
 
-#####SQL code
+######SQL code
 
 ```
     DECLARE @testInput DateTime2 = convert(DateTime2, '0001-01-01 11:59:00 PM')
@@ -72,13 +72,13 @@
 
 
 ---
-### P:PxtlCa.BigVariant.Core.BigVariant.AsXml
+#### P:PxtlCa.BigVariant.Core.BigVariant.AsXml
 
  If the BigVariant contains XML, get its contents. Will throw an exception if the type is not XML. 
 
-#### Example:  Use xpath to pull data out of an Xml BigVariant. 
+##### Example:  Use xpath to pull data out of an Xml BigVariant. 
 
-#####SQL code
+######SQL code
 
 ```
     DECLARE @testInput Xml = convert(Xml
@@ -97,13 +97,13 @@
 
 
 ---
-### P:PxtlCa.BigVariant.Core.BigVariant.AsString
+#### P:PxtlCa.BigVariant.Core.BigVariant.AsString
 
  If the BigVariant contains NVARCHAR(MAX) or similar long SqlString object, get its contents. Will throw an exception if the type is not NVARCHAR(MAX) or similar long SqlString object. 
 
-#### Example:  Unit test. 
+##### Example:  Unit test. 
 
-#####SQL code
+######SQL code
 
 ```
     DECLARE @testString NVARCHAR(2000) = 'Silence is foo'
@@ -117,21 +117,21 @@
 
 
 ---
-### P:PxtlCa.BigVariant.Core.BigVariant.AsBinary
+#### P:PxtlCa.BigVariant.Core.BigVariant.AsBinary
 
  If the BigVariant contains VARBINARY(MAX) or similar long SqlBinary object, get its contents. Will throw an exception if the type is not VARBINARY(MAX) or similar long SqlBinary object. 
 
 
 
 ---
-### M:PxtlCa.BigVariant.Core.BigVariant.Read(System.IO.BinaryReader)
+#### M:PxtlCa.BigVariant.Core.BigVariant.Read(System.IO.BinaryReader)
 
  Implement IBinarySerialize.Read because SQL stores everything as binary even temporarily. Internal plumbing method, don't use. 
 
 
 
 ---
-### M:PxtlCa.BigVariant.Core.BigVariant.Write(System.IO.BinaryWriter)
+#### M:PxtlCa.BigVariant.Core.BigVariant.Write(System.IO.BinaryWriter)
 
  Implement IBinarySerialize.Write because SQL stores everything as binary even temporarily. Internal plumbing method, don't use. 
 
@@ -145,7 +145,7 @@
 
 
 ---
-### M:PxtlCa.BigVariant.Core.UserDefinedFunctions.BigVariantFromXml(System.Data.SqlTypes.SqlXml)
+#### M:PxtlCa.BigVariant.Core.UserDefinedFunctions.BigVariantFromXml(System.Data.SqlTypes.SqlXml)
 
  Take the given XML typed SQL object and convert it into a BigVariant. 
 
@@ -154,9 +154,9 @@
 |value: |an XML object to wrap in a BigVariant|
 Returns: A BigVariant containing the given XML object
 
-#### Example: 
+##### Example: 
 
-#####SQL code
+######SQL code
 
 ```
     DECLARE @testInput Xml = convert(Xml
@@ -174,7 +174,7 @@ Returns: A BigVariant containing the given XML object
 
 
 ---
-### M:PxtlCa.BigVariant.Core.UserDefinedFunctions.BigVariantFromVariant(System.Object)
+#### M:PxtlCa.BigVariant.Core.UserDefinedFunctions.BigVariantFromVariant(System.Object)
 
  Take the given SQL_VARIANT object and convert it into a BigVariant. 
 
@@ -187,9 +187,9 @@ Returns: A BigVariant containing the given SQL_VARIANT
 
 >DateTime2s will be converted to DateTimes as intermediate, use BigVariantFromDateTime2 for proper datetime2.
 
-#### Example: 
+##### Example: 
 
-#####SQL code
+######SQL code
 
 ```
     DECLARE @testInput float = 1.79E+308
@@ -204,7 +204,7 @@ Returns: A BigVariant containing the given SQL_VARIANT
 
 
 ---
-### M:PxtlCa.BigVariant.Core.UserDefinedFunctions.BigVariantFromDateTime2(System.Nullable{System.DateTime})
+#### M:PxtlCa.BigVariant.Core.UserDefinedFunctions.BigVariantFromDateTime2(System.Nullable{System.DateTime})
 
  Take the given DATETIME2 object and convert it into a BigVariant. 
 
@@ -216,7 +216,7 @@ Returns: A BigVariant containing the given DATETIME2
 
 
 ---
-### M:PxtlCa.BigVariant.Core.UserDefinedFunctions.BigVariantFromString(System.Data.SqlTypes.SqlString)
+#### M:PxtlCa.BigVariant.Core.UserDefinedFunctions.BigVariantFromString(System.Data.SqlTypes.SqlString)
 
  Take the given NVARCHAR(MAX) or TEXT or NTEXT object and convert it into a BigVariant. 
 
@@ -225,9 +225,9 @@ Returns: A BigVariant containing the given DATETIME2
 |value: |an NVARCHAR(MAX) or TEXT or NTEXT to wrap in a BigVariant|
 Returns: A BigVariant containing the given NVARCHAR(MAX) or TEXT or NTEXT
 
-#### Example: 
+##### Example: 
 
-#####SQL code
+######SQL code
 
 ```
     DECLARE @testString NVARCHAR(MAX)
@@ -244,7 +244,7 @@ Returns: A BigVariant containing the given NVARCHAR(MAX) or TEXT or NTEXT
 
 
 ---
-### M:PxtlCa.BigVariant.Core.UserDefinedFunctions.BigVariantFromBinary(System.Data.SqlTypes.SqlBinary)
+#### M:PxtlCa.BigVariant.Core.UserDefinedFunctions.BigVariantFromBinary(System.Data.SqlTypes.SqlBinary)
 
  Take the given VARBINARY(MAX) or IMAGE or other binary object and convert it into a BigVariant. 
 
