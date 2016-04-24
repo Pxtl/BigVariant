@@ -11,8 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
-		README.md = README.md
+		BigVariant.Install.SqlCmd.sql = BigVariant.Install.SqlCmd.sql
 		PxtlCa.BigVariant.Core.nuspec = PxtlCa.BigVariant.Core.nuspec
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PxtlCa.BigVariant.Test", "PxtlCa.BigVariant.Test\PxtlCa.BigVariant.Test.csproj", "{6A28D0D8-9412-4E12-9485-48C449491DE4}"

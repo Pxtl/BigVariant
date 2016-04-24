@@ -51,6 +51,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="DateTime2BigVariant.cs">
+      <SubType>Designer</SubType>
+    </Compile>
     <Compile Include="SqlBinaryBigVariant.cs">
       <SubType>Designer</SubType>
     </Compile>
@@ -70,6 +73,9 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DateTime2BigVariant.resx">
+      <DependentUpon>DateTime2BigVariant.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SqlBinaryBigVariant.resx">
       <DependentUpon>SqlBinaryBigVariant.cs</DependentUpon>
     </EmbeddedResource>

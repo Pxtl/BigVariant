@@ -36,10 +36,17 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <!-- sign with key only in RELEASE mode -->
+    <!-- sign with passworded key key only in RELEASE mode -->
     <AssemblyOriginatorKeyFile>PxtlCaPersonal.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">  
     <DocumentationFile>bin\Release\PxtlCa.BigVariant.Core.XML</DocumentationFile>
     <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <!-- sign with unpassworded key key only in DEBUG mode -->
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>PxtlCaPublic.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -56,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="PxtlCaPersonal.pfx" />
+    <None Include="PxtlCaPublic.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

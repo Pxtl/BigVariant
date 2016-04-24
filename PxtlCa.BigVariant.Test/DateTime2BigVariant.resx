@@ -117,103 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="DateTimeIntoBigVariant_TestAction.SqlScript" xml:space="preserve">
-    <value>DECLARE @testInput DateTime
+  <data name="DateTime2intoBigVariant_TestAction.SqlScript" xml:space="preserve">
+    <value>DECLARE @testInput DateTime2
 DECLARE @testVar BigVariant
-SET @testInput = convert(DateTime, '1999-12-31 11:59:00 PM')
-SET @testVar = dbo.BigVariantFromVariant(@testInput)
-SELECT 'success' WHERE @testInput = @testVar.AsVariant</value>
-  </data>
-  <data name="DateTimeOffsetIntoBigVariant_TestAction.SqlScript" xml:space="preserve">
-    <value>DECLARE @testInput datetimeoffset
-DECLARE @testVar BigVariant
-SET @testInput = convert(datetimeoffset, '0001-01-01 11:59:00 PM')
-SET @testVar = dbo.BigVariantFromVariant(@testInput)
-SELECT 'success' WHERE @testInput = @testVar.AsVariant</value>
-  </data>
-  <data name="TinyIntIntoBigVariant_TestAction.SqlScript" xml:space="preserve">
-    <value>DECLARE @testInput tinyint
-DECLARE @testVar BigVariant
-SET @testInput = 255
-SET @testVar = dbo.BigVariantFromVariant(@testInput)
-SELECT 'success' WHERE @testInput = @testVar.AsVariant AND @testVar.Type = 'SqlByte'</value>
-  </data>
-  <data name="SmallIntIntoBigVariant_TestAction.SqlScript" xml:space="preserve">
-    <value>DECLARE @testInput SmallInt
-DECLARE @testVar BigVariant
-SET @testInput = 32767
-SET @testVar = dbo.BigVariantFromVariant(@testInput)
-SELECT 'success' WHERE @testInput = @testVar.AsVariant AND @testVar.Type = 'SqlInt16'</value>
-  </data>
-  <data name="IntIntoBigVariant_TestAction.SqlScript" xml:space="preserve">
-    <value>DECLARE @testInput int
-DECLARE @testVar BigVariant
-SET @testInput = 2147483647
-SET @testVar = dbo.BigVariantFromVariant(@testInput)
-SELECT 'success' WHERE @testInput = @testVar.AsVariant AND @testVar.Type = 'SqlInt32'</value>
-  </data>
-  <data name="BigIntIntoBigVariant_TestAction.SqlScript" xml:space="preserve">
-    <value>DECLARE @testInput bigint
-DECLARE @testVar BigVariant
-SET @testInput = 9223372036854775807
-SET @testVar = dbo.BigVariantFromVariant(@testInput)
-SELECT 'success' WHERE @testInput = @testVar.AsVariant AND @testVar.Type = 'SqlInt64'</value>
-  </data>
-  <data name="BitIntoBigVariant_TestAction.SqlScript" xml:space="preserve">
-    <value>DECLARE @testInput bit
-DECLARE @testVar BigVariant
-SET @testInput = 1
-SET @testVar = dbo.BigVariantFromVariant(@testInput)
-SELECT 'success' WHERE @testInput = @testVar.AsVariant AND @testVar.Type = 'SqlBoolean'</value>
-  </data>
-  <data name="FloatIntoBigVariant_TestAction.SqlScript" xml:space="preserve">
-    <value>DECLARE @testInput float(24)
-DECLARE @testVar BigVariant
-SET @testInput = 0.1
-SET @testVar = dbo.BigVariantFromVariant(@testInput)
-SELECT 'success' WHERE @testInput = @testInput AND @testVar.Type = 'SqlSingle'</value>
-  </data>
-  <data name="DoubleIntoBigVariant_TestAction.SqlScript" xml:space="preserve">
-    <value>DECLARE @testInput float
-DECLARE @testVar BigVariant
-SET @testInput = 1.79E+308
-SET @testVar = dbo.BigVariantFromVariant(@testInput)
-SELECT 'success' WHERE @testInput = @testVar.AsVariant</value>
-  </data>
-  <data name="CompareAllNumericTypes_TestAction.SqlScript" xml:space="preserve">
-    <value>declare @bitVar as BigVariant = dbo.BigVariantFromVariant(CONVERT(bit, 1))
-declare @tinyintVar as BigVariant = dbo.BigVariantFromVariant(CONVERT(tinyint, 1))
-declare @smallintVar as BigVariant = dbo.BigVariantFromVariant(CONVERT(smallint, 1))
-declare @intVar as BigVariant = dbo.BigVariantFromVariant(CONVERT(int, 1))
-declare @bigintVar as BigVariant = dbo.BigVariantFromVariant(CONVERT(bigint, 1))
-declare @floatVar as BigVariant = dbo.BigVariantFromVariant(CONVERT(float(24), 1))
-declare @doubleVar as BigVariant = dbo.BigVariantFromVariant(CONVERT(float, 1))
-declare @decimalVar as BigVariant = dbo.BigVariantFromVariant(CONVERT(decimal, 1))
-declare @moneyVar as BigVariant = dbo.BigVariantFromVariant(CONVERT(money, 1))
-
-SELECT 'success' 
-WHERE @bitVar.AsVariant = @tinyintvar.AsVariant 
-	AND @tinyintvar.AsVariant = @smallintVar.AsVariant 
-	AND @smallintVar.AsVariant = @intVar.AsVariant 
-	AND @intVar.AsVariant = @bigintVar.AsVariant 
-	AND @bigintVar.AsVariant = @floatVar.AsVariant 
-	AND @floatVar.AsVariant = @doubleVar.AsVariant 
-	AND @doubleVar.AsVariant = @decimalVar.AsVariant 
-	AND @decimalVar.AsVariant = @moneyVar.AsVariant </value>
-  </data>
-  <data name="DecimalIntoBigVariant_TestAction.SqlScript" xml:space="preserve">
-    <value>DECLARE @testInput decimal
-DECLARE @testVar BigVariant
-SET @testInput = 922337203685477.5807
-SET @testVar = dbo.BigVariantFromVariant(@testInput)
-SELECT 'success' WHERE @testInput = @testVar.AsVariant AND @testVar.Type = 'SqlDecimal'</value>
-  </data>
-  <data name="MoneyIntoBigVariant_TestAction.SqlScript" xml:space="preserve">
-    <value>DECLARE @testInput money
-DECLARE @testVar BigVariant
-SET @testInput = 922337203685477.5807
-SET @testVar = dbo.BigVariantFromVariant(@testInput)
-SELECT 'success' WHERE @testInput = @testVar.AsVariant AND @testVar.Type = 'SqlMoney'</value>
+SET @testInput = convert(DateTime2, '0001-01-01 11:59:00 PM')
+SET @testVar = dbo.BigVariantFromDateTime2(@testInput)
+SELECT 'success' WHERE @testInput = @testVar.AsDateTime2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

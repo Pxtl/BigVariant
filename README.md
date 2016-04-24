@@ -48,9 +48,25 @@ Right-click PxtlCa.BigVariant.PublishDatabase and select **publish**.
 
 Configure the publisher to connect to your database and click **publish**.
 
-## Installing via DACPAC or SQL scripts
+## Installing from SQL scripts
 
-SQL scripts and DACPACs for publishing have not been set up as part of the standard build-process yet.
+A SqlCmd script "SqlVariant.Install.SqlCmd.sql" can be downloaded and run (in SqlCmd mode) against your database to install BigVariant.  
+Just change the Database variable to the name of your database and run it against your DB server (again, in SqlCmd mode) and you'll have BigVariant installed.
+
+If you use the SqlCmd script, you don't need to download any other source.  
+Note that this can only be done for one-time installs, incremental updates will require DACPACs or SSDT.
+
+If you'd like to install through sqlcmd from the command line, execute
+
+```
+	sqlcmd -S[MyServerName] -v DatabaseName="MyDatabaseName" -i "BigVariant.Install.SqlCmd.sql"
+```
+
+in the folder.
+
+## Installing via DACPAC 
+
+DACPACs for publishing have not been set up as part of the standard build-process yet.
 
 # Usage
 
@@ -58,6 +74,8 @@ See the [generated XmlDoc file](Docs/PxtlCa.BigVariant.Core.GeneratedXmlDoc.md).
 
 # On PxtlCa.pfx
 
-The assembly is signed with a strong name in Release mode, but I (MZ) am keeping my PFX file private.  
-As such, you can build the project in Debug mode or generate your own key for signing in Release mode.  
+The assembly is signed with my personal key in Release mode, but I (MZ) am keeping my PFX file private.  
+There's a public snk file for signing in debug mode.  
+As such, you can build the project in Debug mode or generate your own key for signing in Release mode (or use the public SNK) 
+but you may have to edit the .vcproj file since there are some hand-tweaks to make it choose based on build profile.
 Pull-requests to make the workflow for this problem sane are always welcome.
