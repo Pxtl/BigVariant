@@ -16,7 +16,10 @@ namespace PxtlCa.XmlCommentMarkDownGenerator
             var xml = File.ReadAllText(args[0]);
             var doc = XDocument.Parse(xml);
             var md = doc.Root.ToMarkDown();
-            File.WriteAllText(@"..\..\..\Docs\PxtlCa.BigVariant.Core.GeneratedXmlDoc.md", md);
+            if(args.Length > 1)
+            { 
+                File.WriteAllText(@"..\..\..\Docs\PxtlCa.BigVariant.Core.GeneratedXmlDoc.md", md);
+            }
         }
     }
 

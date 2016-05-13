@@ -343,6 +343,7 @@ namespace PxtlCa.BigVariant.Test
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition notEmptyResultSetCondition9;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction MoneyIntoBigVariant_TestAction;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition notEmptyResultSetCondition10;
+            Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition notEmptyResultSetCondition11;
             this.DateTimeIntoBigVariantData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
             this.DateTimeOffsetIntoBigVariantData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
             this.TinyIntIntoBigVariantData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
@@ -377,6 +378,7 @@ namespace PxtlCa.BigVariant.Test
             notEmptyResultSetCondition9 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition();
             MoneyIntoBigVariant_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
             notEmptyResultSetCondition10 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition();
+            notEmptyResultSetCondition11 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition();
             // 
             // DateTimeIntoBigVariant_TestAction
             // 
@@ -526,6 +528,7 @@ namespace PxtlCa.BigVariant.Test
             // CompareAllNumericTypes_TestAction
             // 
             CompareAllNumericTypes_TestAction.Conditions.Add(notEmptyResultSetCondition9);
+            CompareAllNumericTypes_TestAction.Conditions.Add(notEmptyResultSetCondition11);
             resources.ApplyResources(CompareAllNumericTypes_TestAction, "CompareAllNumericTypes_TestAction");
             // 
             // DecimalIntoBigVariantData
@@ -567,6 +570,12 @@ namespace PxtlCa.BigVariant.Test
             notEmptyResultSetCondition10.Enabled = true;
             notEmptyResultSetCondition10.Name = "notEmptyResultSetCondition10";
             notEmptyResultSetCondition10.ResultSet = 1;
+            // 
+            // notEmptyResultSetCondition11
+            // 
+            notEmptyResultSetCondition11.Enabled = true;
+            notEmptyResultSetCondition11.Name = "notEmptyResultSetCondition11";
+            notEmptyResultSetCondition11.ResultSet = 2;
         }
 
         #endregion

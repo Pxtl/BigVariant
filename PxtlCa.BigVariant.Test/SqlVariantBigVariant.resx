@@ -192,8 +192,9 @@ WHERE @bitVar.AsVariant = @tinyintvar.AsVariant
 	AND @tinyintvar.AsVariant = @smallintVar.AsVariant 
 	AND @smallintVar.AsVariant = @intVar.AsVariant 
 	AND @intVar.AsVariant = @bigintVar.AsVariant 
-	AND @bigintVar.AsVariant = @floatVar.AsVariant 
-	AND @floatVar.AsVariant = @doubleVar.AsVariant 
+
+SELECT 'success' 
+WHERE @floatVar.AsVariant = @doubleVar.AsVariant 
 	AND @doubleVar.AsVariant = @decimalVar.AsVariant 
 	AND @decimalVar.AsVariant = @moneyVar.AsVariant </value>
   </data>
