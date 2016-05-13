@@ -8,9 +8,9 @@ using System.Data;
 
 namespace PxtlCa.BigVariant.Core
 {
-    public static class SqlTypeExtensions
+    internal static class SqlTypeExtensions
     {
-        public static SqlTypeHelper GetHelper(SqlTypeEnum type) //can't use true extension methods in C# 2.0 //TODO: find out if this is true or use C# 3.5
+        internal static SqlTypeHelper GetHelper(SqlTypeEnum type) //can't use true extension methods in C# 2.0 //TODO: find out if this is true or use C# 3.5
         {
             switch (type)
             {

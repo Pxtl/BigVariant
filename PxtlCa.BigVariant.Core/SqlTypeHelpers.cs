@@ -8,33 +8,33 @@ using System.Data;
 
 namespace PxtlCa.BigVariant.Core
 {
-    public abstract class SqlTypeHelper
+    internal abstract class SqlTypeHelper
     {
-        public abstract SqlTypeEnum SqlType { get; }
-        public abstract void Write(BinaryWriter w, Object value);
-        public abstract Object Read(BinaryReader r);
-        public abstract String ToString(Object value);
-        public abstract int GetHashCode(Object value);
+        internal abstract SqlTypeEnum SqlType { get; }
+        internal abstract void Write(BinaryWriter w, Object value);
+        internal abstract Object Read(BinaryReader r);
+        internal abstract String ToString(Object value);
+        internal abstract int GetHashCode(Object value);
     }
 
-    public class SqlNullHelper : SqlTypeHelper
+    internal class SqlNullHelper : SqlTypeHelper
     {
-        public override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlNull; } }
-        public override object Read(BinaryReader r) { return null; }
-        public override void Write(BinaryWriter w, Object value) { } //noop
-        public override string ToString(Object value) { return "NULL"; }
-        public override int GetHashCode(Object value) { return 0; }
+        internal override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlNull; } }
+        internal override object Read(BinaryReader r) { return null; }
+        internal override void Write(BinaryWriter w, Object value) { } //noop
+        internal override string ToString(Object value) { return "NULL"; }
+        internal override int GetHashCode(Object value) { return 0; }
     }
 
-    public abstract class TypedSqlTypeHelper<T> : SqlTypeHelper
+    internal abstract class TypedSqlTypeHelper<T> : SqlTypeHelper
     {
-        public override void Write(BinaryWriter w, Object value)
+        internal override void Write(BinaryWriter w, Object value)
         {
             WriteImpl(w, (T)value);
         }
         protected abstract void WriteImpl(BinaryWriter w, T value);
 
-        public override String ToString(Object value)
+        internal override String ToString(Object value)
         {
             return ToStringImpl((T)value);
         }
@@ -44,7 +44,7 @@ namespace PxtlCa.BigVariant.Core
             return value.ToString();
         }
 
-        public override int GetHashCode(object value)
+        internal override int GetHashCode(object value)
         {
             return GetHashCodeImpl((T)value);
         }
@@ -52,37 +52,37 @@ namespace PxtlCa.BigVariant.Core
         protected abstract int GetHashCodeImpl(T value);
     }
 
-    public class SqlBinaryHelper : TypedSqlTypeHelper<SqlBinary>
+    internal class SqlBinaryHelper : TypedSqlTypeHelper<SqlBinary>
     {
-        public override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlBinary; } }
-        public override object Read(BinaryReader r) { return (SqlBinary)r.ReadBytes((int)(r.BaseStream.Length - r.BaseStream.Position)); }
+        internal override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlBinary; } }
+        internal override object Read(BinaryReader r) { return (SqlBinary)r.ReadBytes((int)(r.BaseStream.Length - r.BaseStream.Position)); }
         protected override void WriteImpl(BinaryWriter w, SqlBinary value) { w.Write(value.Value); }
         protected override string ToStringImpl(SqlBinary value) { return value.Value.ToString(); }
         protected override int GetHashCodeImpl(SqlBinary value) { return value.Value.GetHashCode(); }
     }
 
-    public class SqlByteHelper : TypedSqlTypeHelper<SqlByte>
+    internal class SqlByteHelper : TypedSqlTypeHelper<SqlByte>
     {
-        public override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlByte; } }
-        public override object Read(BinaryReader r) { return (SqlByte)r.ReadByte(); }
+        internal override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlByte; } }
+        internal override object Read(BinaryReader r) { return (SqlByte)r.ReadByte(); }
         protected override void WriteImpl(BinaryWriter w, SqlByte value) { w.Write(value.Value); }
         protected override string ToStringImpl(SqlByte value) { return value.Value.ToString(); }
         protected override int GetHashCodeImpl(SqlByte value) { return value.Value.GetHashCode(); }
     }
 
-    public class SqlBooleanHelper : TypedSqlTypeHelper<SqlBoolean>
+    internal class SqlBooleanHelper : TypedSqlTypeHelper<SqlBoolean>
     {
-        public override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlBoolean; } }
-        public override object Read(BinaryReader r) { return (SqlBoolean)r.ReadBoolean(); }
+        internal override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlBoolean; } }
+        internal override object Read(BinaryReader r) { return (SqlBoolean)r.ReadBoolean(); }
         protected override void WriteImpl(BinaryWriter w, SqlBoolean value) { w.Write(value.Value); }
         protected override string ToStringImpl(SqlBoolean value) { return value.Value.ToString(); }
         protected override int GetHashCodeImpl(SqlBoolean value) { return value.Value.GetHashCode(); }
     }
 
-    public class SqlDateTimeHelper : TypedSqlTypeHelper<SqlDateTime>
+    internal class SqlDateTimeHelper : TypedSqlTypeHelper<SqlDateTime>
     {
-        public override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlDateTime; } }
-        public override object Read(BinaryReader r) {
+        internal override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlDateTime; } }
+        internal override object Read(BinaryReader r) {
             var dayTicks = r.ReadInt32();
             var timeTicks = r.ReadInt32();
             return new SqlDateTime(dayTicks, timeTicks); }
@@ -94,10 +94,10 @@ namespace PxtlCa.BigVariant.Core
         protected override int GetHashCodeImpl(SqlDateTime value) { return value.Value.GetHashCode(); }
     }
 
-    public class DateTimeHelper : TypedSqlTypeHelper<DateTime>
+    internal class DateTimeHelper : TypedSqlTypeHelper<DateTime>
     {
-        public override SqlTypeEnum SqlType { get { return SqlTypeEnum.DateTime; } }
-        public override object Read(BinaryReader r)
+        internal override SqlTypeEnum SqlType { get { return SqlTypeEnum.DateTime; } }
+        internal override object Read(BinaryReader r)
         {
             var ticks = r.ReadInt64();
             var kind = (DateTimeKind)r.ReadInt32();
@@ -112,10 +112,10 @@ namespace PxtlCa.BigVariant.Core
         protected override int GetHashCodeImpl(DateTime value) { return value.GetHashCode(); }
     }
 
-    public class DateTimeOffsetHelper : TypedSqlTypeHelper<DateTimeOffset>
+    internal class DateTimeOffsetHelper : TypedSqlTypeHelper<DateTimeOffset>
     {
-        public override SqlTypeEnum SqlType { get { return SqlTypeEnum.DateTimeOffset; } }
-        public override object Read(BinaryReader r)
+        internal override SqlTypeEnum SqlType { get { return SqlTypeEnum.DateTimeOffset; } }
+        internal override object Read(BinaryReader r)
         {
             var ticks = r.ReadInt64();
             var offset = new TimeSpan(r.ReadInt64());
@@ -130,10 +130,10 @@ namespace PxtlCa.BigVariant.Core
         protected override int GetHashCodeImpl(DateTimeOffset value) { return value.GetHashCode(); }
     }
 
-    public class SqlDecimalHelper : TypedSqlTypeHelper<SqlDecimal>
+    internal class SqlDecimalHelper : TypedSqlTypeHelper<SqlDecimal>
     {
-        public override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlDecimal; } }
-        public override object Read(BinaryReader r)
+        internal override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlDecimal; } }
+        internal override object Read(BinaryReader r)
         {
             var precision = r.ReadByte();
             var scale = r.ReadByte();
@@ -159,62 +159,62 @@ namespace PxtlCa.BigVariant.Core
         protected override int GetHashCodeImpl(SqlDecimal value) { return value.Value.GetHashCode(); }
     }
 
-    public class SqlDoubleHelper : TypedSqlTypeHelper<SqlDouble>
+    internal class SqlDoubleHelper : TypedSqlTypeHelper<SqlDouble>
     {
-        public override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlDouble; } }
-        public override object Read(BinaryReader r) { return (SqlDouble)r.ReadDouble(); }
+        internal override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlDouble; } }
+        internal override object Read(BinaryReader r) { return (SqlDouble)r.ReadDouble(); }
         protected override void WriteImpl(BinaryWriter w, SqlDouble value) { w.Write(value.Value); }
         protected override string ToStringImpl(SqlDouble value) { return value.Value.ToString(); }
         protected override int GetHashCodeImpl(SqlDouble value) { return value.Value.GetHashCode(); }
     }
 
-    public class SqlGuidHelper : TypedSqlTypeHelper<SqlGuid>
+    internal class SqlGuidHelper : TypedSqlTypeHelper<SqlGuid>
     {
-        public override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlGuid; } }
-        public override object Read(BinaryReader r) { return new SqlGuid(r.ReadBytes(16)); }
+        internal override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlGuid; } }
+        internal override object Read(BinaryReader r) { return new SqlGuid(r.ReadBytes(16)); }
         protected override void WriteImpl(BinaryWriter w, SqlGuid value) { w.Write(value.ToByteArray()); }
         protected override string ToStringImpl(SqlGuid value) { return value.Value.ToString(); }
         protected override int GetHashCodeImpl(SqlGuid value) { return value.Value.GetHashCode(); }
     }
 
-    public class SqlMoneyHelper : TypedSqlTypeHelper<SqlMoney>
+    internal class SqlMoneyHelper : TypedSqlTypeHelper<SqlMoney>
     {
-        public override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlMoney; } }
-        public override object Read(BinaryReader r) { return (SqlMoney)r.ReadDecimal(); }
+        internal override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlMoney; } }
+        internal override object Read(BinaryReader r) { return (SqlMoney)r.ReadDecimal(); }
         protected override void WriteImpl(BinaryWriter w, SqlMoney value) { w.Write(value.Value); }
         protected override string ToStringImpl(SqlMoney value) { return value.Value.ToString(); }
         protected override int GetHashCodeImpl(SqlMoney value) { return value.Value.GetHashCode(); }
     }
 
-    public class SqlInt16Helper : TypedSqlTypeHelper<SqlInt16>
+    internal class SqlInt16Helper : TypedSqlTypeHelper<SqlInt16>
     {
-        public override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlInt16; } }
-        public override object Read(BinaryReader r) { return (SqlInt16)r.ReadInt16(); }
+        internal override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlInt16; } }
+        internal override object Read(BinaryReader r) { return (SqlInt16)r.ReadInt16(); }
         protected override void WriteImpl(BinaryWriter w, SqlInt16 value) { w.Write(value.Value); }
         protected override string ToStringImpl(SqlInt16 value) { return value.Value.ToString(); }
         protected override int GetHashCodeImpl(SqlInt16 value) { return value.Value.GetHashCode(); }
     }
 
-    public class SqlInt32Helper : TypedSqlTypeHelper<SqlInt32>
+    internal class SqlInt32Helper : TypedSqlTypeHelper<SqlInt32>
     {
-        public override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlInt32; } }
-        public override object Read(BinaryReader r) { return (SqlInt32)r.ReadInt32(); }
+        internal override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlInt32; } }
+        internal override object Read(BinaryReader r) { return (SqlInt32)r.ReadInt32(); }
         protected override void WriteImpl(BinaryWriter w, SqlInt32 value) { w.Write(value.Value); }
         protected override string ToStringImpl(SqlInt32 value) { return value.Value.ToString(); }
         protected override int GetHashCodeImpl(SqlInt32 value) { return value.Value.GetHashCode(); }
     }
-    public class SqlInt64Helper : TypedSqlTypeHelper<SqlInt64>
+    internal class SqlInt64Helper : TypedSqlTypeHelper<SqlInt64>
     {
-        public override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlInt64; } }
-        public override object Read(BinaryReader r) { return (SqlInt64)r.ReadInt64(); }
+        internal override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlInt64; } }
+        internal override object Read(BinaryReader r) { return (SqlInt64)r.ReadInt64(); }
         protected override void WriteImpl(BinaryWriter w, SqlInt64 value) { w.Write(value.Value); }
         protected override string ToStringImpl(SqlInt64 value) { return value.Value.ToString(); }
         protected override int GetHashCodeImpl(SqlInt64 value) { return value.Value.GetHashCode(); }
     }
-    public class SqlStringHelper : TypedSqlTypeHelper<SqlString>
+    internal class SqlStringHelper : TypedSqlTypeHelper<SqlString>
     {
-        public override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlString; } }
-        public override object Read(BinaryReader r)
+        internal override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlString; } }
+        internal override object Read(BinaryReader r)
         {
             return new SqlString(r.ReadString()); //TODO: switch to proper byte-array 
         }
@@ -225,18 +225,18 @@ namespace PxtlCa.BigVariant.Core
         protected override string ToStringImpl(SqlString value) { return value.Value; }
         protected override int GetHashCodeImpl(SqlString value) { return value.Value.GetHashCode(); }
     }
-    public class SqlSingleHelper : TypedSqlTypeHelper<SqlSingle>
+    internal class SqlSingleHelper : TypedSqlTypeHelper<SqlSingle>
     {
-        public override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlSingle; } }
-        public override object Read(BinaryReader r) { return (SqlSingle)r.ReadSingle(); }
+        internal override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlSingle; } }
+        internal override object Read(BinaryReader r) { return (SqlSingle)r.ReadSingle(); }
         protected override void WriteImpl(BinaryWriter w, SqlSingle value) { w.Write(value.Value); }
         protected override string ToStringImpl(SqlSingle value) { return value.Value.ToString(); }
         protected override int GetHashCodeImpl(SqlSingle value) { return value.Value.GetHashCode(); }
     }
-    public class SqlXmlHelper : TypedSqlTypeHelper<SqlXml>
+    internal class SqlXmlHelper : TypedSqlTypeHelper<SqlXml>
     {
-        public override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlXml; } }
-        public override object Read(BinaryReader r)
+        internal override SqlTypeEnum SqlType { get { return SqlTypeEnum.SqlXml; } }
+        internal override object Read(BinaryReader r)
         {
             return new SqlXml(new XmlTextReader(r.BaseStream));
         }
