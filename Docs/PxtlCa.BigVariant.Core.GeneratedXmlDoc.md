@@ -1,25 +1,24 @@
 # PxtlCa.BigVariant.Core #
 
-## T:BigVariant
+## Type BigVariant
 
  The SQLCLR BigVariant type 
 
 
 
 ---
-#### P:BigVariant.Type
+#### Property BigVariant.Type
 
  The SQL CLR Type of the BigVariant, as a String accessible from SQL. See https://msdn.microsoft.com/en-us/library/ms131092.aspx for information about the types. 
 
 ##### Example: 
 
-######SQL code
+###### SQL code
 
 ```
     DECLARE @testInput bit = 1
     DECLARE @testVar BigVariant = dbo.BigVariantFromVariant(@testInput)
     SELECT @testVar.Type -- returns 'SqlBoolean'
-    
 ```
 
 
@@ -27,7 +26,7 @@
 
 
 ---
-#### P:BigVariant.AsVariant
+#### Property BigVariant.AsVariant
 
  If the BigVariant contains a SQL_VARIANT-compatible type, get its contents. Will throw an exception if the type is not SQL_VARIANT-compatible. 
 
@@ -37,14 +36,13 @@
 
 ##### Example: 
 
-######SQL code
+###### SQL code
 
 ```
     DECLARE @testInput float = 1.79E+308
     DECLARE @testVar BigVariant = dbo.BigVariantFromVariant(@testInput)
     SELECT @testVar.AsVariant
     -- returns 1.79E+308
-    
 ```
 
 
@@ -52,19 +50,18 @@
 
 
 ---
-#### P:BigVariant.AsDateTime2
+#### Property BigVariant.AsDateTime2
 
  If the BigVariant contains a DATETIME2 (DateTime in CLR), get its contents. Will throw an exception if the type is not DATETIME2. 
 
 ##### Example:  DATETIME2 Unit Test 
 
-######SQL code
+###### SQL code
 
 ```
     DECLARE @testInput DateTime2 = convert(DateTime2, '0001-01-01 11:59:00 PM')
     DECLARE @testVar BigVariant = dbo.BigVariantFromDateTime2(@testInput)
     SELECT 'success' WHERE @testInput = @testVar.AsDateTime2
-    
 ```
 
 
@@ -72,13 +69,13 @@
 
 
 ---
-#### P:BigVariant.AsXml
+#### Property BigVariant.AsXml
 
  If the BigVariant contains XML, get its contents. Will throw an exception if the type is not XML. 
 
 ##### Example:  Use xpath to pull data out of an Xml BigVariant. 
 
-######SQL code
+###### SQL code
 
 ```
     DECLARE @testInput Xml = convert(Xml
@@ -89,7 +86,6 @@
     DECLARE @testVar BigVariant = dbo.BigVariantFromXml(@testInput)
     SELECT @testVar.AsXml.Query('/catalog/book/author/text()')
     -- returns 'Gambardella, Matthew' as XML
-    
 ```
 
 
@@ -97,19 +93,18 @@
 
 
 ---
-#### P:BigVariant.AsString
+#### Property BigVariant.AsString
 
  If the BigVariant contains NVARCHAR(MAX) or similar long SqlString object, get its contents. Will throw an exception if the type is not NVARCHAR(MAX) or similar long SqlString object. 
 
 ##### Example:  Unit test. 
 
-######SQL code
+###### SQL code
 
 ```
     DECLARE @testString NVARCHAR(2000) = 'Silence is foo'
     DECLARE @testVar BigVariant = dbo.BigVariantFromVariant(@testString)
     SELECT 'success' WHERE @testString = @testVar.AsString
-    
 ```
 
 
@@ -117,46 +112,46 @@
 
 
 ---
-#### P:BigVariant.AsBinary
+#### Property BigVariant.AsBinary
 
  If the BigVariant contains VARBINARY(MAX) or similar long SqlBinary object, get its contents. Will throw an exception if the type is not VARBINARY(MAX) or similar long SqlBinary object. 
 
 
 
 ---
-#### M:BigVariant.Read(System.IO.BinaryReader)
+#### Method BigVariant.Read(System.IO.BinaryReader)
 
  Implement IBinarySerialize.Read because SQL stores everything as binary even temporarily. Internal plumbing method, don't use. 
 
 
 
 ---
-#### M:BigVariant.Write(System.IO.BinaryWriter)
+#### Method BigVariant.Write(System.IO.BinaryWriter)
 
  Implement IBinarySerialize.Write because SQL stores everything as binary even temporarily. Internal plumbing method, don't use. 
 
 
 
 ---
-## T:UserDefinedFunctions
+## Type UserDefinedFunctions
 
  This class collects together various SQL User-Defined-functions used to construct BigVariant values out of various SQL types. 
 
 
 
 ---
-#### M:UserDefinedFunctions.BigVariantFromXml(System.Data.SqlTypes.SqlXml)
+#### Method UserDefinedFunctions.BigVariantFromXml(System.Data.SqlTypes.SqlXml)
 
  Take the given XML typed SQL object and convert it into a BigVariant. 
 
 |Name | Description |
 |-----|------|
 |value: |an XML object to wrap in a BigVariant|
-Returns: A BigVariant containing the given XML object
+**Returns**: A BigVariant containing the given XML object
 
 ##### Example: 
 
-######SQL code
+###### SQL code
 
 ```
     DECLARE @testInput Xml = convert(Xml
@@ -166,7 +161,6 @@ Returns: A BigVariant containing the given XML object
     )
     DECLARE @testVar BigVariant = dbo.BigVariantFromXml(@testInput)
     SELECT 'success' WHERE CONVERT(NVARCHAR(4000), @testInput) = CONVERT(NVARCHAR(4000), @testVar.AsXml)
-    
 ```
 
 
@@ -174,14 +168,14 @@ Returns: A BigVariant containing the given XML object
 
 
 ---
-#### M:UserDefinedFunctions.BigVariantFromVariant(System.Object)
+#### Method UserDefinedFunctions.BigVariantFromVariant(System.Object)
 
  Take the given SQL_VARIANT object and convert it into a BigVariant. 
 
 |Name | Description |
 |-----|------|
 |value: |a SQL_VARIANT to wrap in a BigVariant|
-Returns: A BigVariant containing the given SQL_VARIANT
+**Returns**: A BigVariant containing the given SQL_VARIANT
 
 
 
@@ -189,14 +183,13 @@ Returns: A BigVariant containing the given SQL_VARIANT
 
 ##### Example: 
 
-######SQL code
+###### SQL code
 
 ```
     DECLARE @testInput float = 1.79E+308
     DECLARE @testVar BigVariant = dbo.BigVariantFromVariant(@testInput)
     SELECT @testVar.AsVariant
     -- returns 1.79E+308
-    
 ```
 
 
@@ -204,30 +197,30 @@ Returns: A BigVariant containing the given SQL_VARIANT
 
 
 ---
-#### M:UserDefinedFunctions.BigVariantFromDateTime2(System.Nullable{System.DateTime})
+#### Method UserDefinedFunctions.BigVariantFromDateTime2(System.Nullable{System.DateTime})
 
  Take the given DATETIME2 object and convert it into a BigVariant. 
 
 |Name | Description |
 |-----|------|
 |value: |a DATETIME2 to wrap in a BigVariant|
-Returns: A BigVariant containing the given DATETIME2
+**Returns**: A BigVariant containing the given DATETIME2
 
 
 
 ---
-#### M:UserDefinedFunctions.BigVariantFromString(System.Data.SqlTypes.SqlString)
+#### Method UserDefinedFunctions.BigVariantFromString(System.Data.SqlTypes.SqlString)
 
  Take the given NVARCHAR(MAX) or TEXT or NTEXT object and convert it into a BigVariant. 
 
 |Name | Description |
 |-----|------|
 |value: |an NVARCHAR(MAX) or TEXT or NTEXT to wrap in a BigVariant|
-Returns: A BigVariant containing the given NVARCHAR(MAX) or TEXT or NTEXT
+**Returns**: A BigVariant containing the given NVARCHAR(MAX) or TEXT or NTEXT
 
 ##### Example: 
 
-######SQL code
+###### SQL code
 
 ```
     DECLARE @testString NVARCHAR(MAX)
@@ -236,7 +229,6 @@ Returns: A BigVariant containing the given NVARCHAR(MAX) or TEXT or NTEXT
      + 'Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum.' + CHAR(13) + CHAR(10) + CHAR(13) + CHAR(10)
      + 'Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus accumsan cursus velit.' + CHAR(13) + CHAR(10) + CHAR(13) + CHAR(10)   
     SET @testVar = dbo.BigVariantFromString(@testString)
-    
 ```
 
 
@@ -244,14 +236,14 @@ Returns: A BigVariant containing the given NVARCHAR(MAX) or TEXT or NTEXT
 
 
 ---
-#### M:UserDefinedFunctions.BigVariantFromBinary(System.Data.SqlTypes.SqlBinary)
+#### Method UserDefinedFunctions.BigVariantFromBinary(System.Data.SqlTypes.SqlBinary)
 
  Take the given VARBINARY(MAX) or IMAGE or other binary object and convert it into a BigVariant. 
 
 |Name | Description |
 |-----|------|
 |value: |an VARBINARY(MAX) or IMAGE or other binary to wrap in a BigVariant|
-Returns: A BigVariant containing the given VARBINARY(MAX) or IMAGE or other binary
+**Returns**: A BigVariant containing the given VARBINARY(MAX) or IMAGE or other binary
 
 
 
