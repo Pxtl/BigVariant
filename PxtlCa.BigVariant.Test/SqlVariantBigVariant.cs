@@ -334,16 +334,17 @@ namespace PxtlCa.BigVariant.Test
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction BitIntoBigVariant_TestAction;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition notEmptyResultSetCondition5;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction FloatIntoBigVariant_TestAction;
-            Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction DoubleIntoBigVariant_TestAction;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition notEmptyResultSetCondition6;
+            Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction DoubleIntoBigVariant_TestAction;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition notEmptyResultSetCondition7;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction CompareAllNumericTypes_TestAction;
+            Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition notEmptyResultSetCondition9;
+            Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition notEmptyResultSetCondition11;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction DecimalIntoBigVariant_TestAction;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition notEmptyResultSetCondition8;
-            Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition notEmptyResultSetCondition9;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction MoneyIntoBigVariant_TestAction;
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition notEmptyResultSetCondition10;
-            Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition notEmptyResultSetCondition11;
+            Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition notEmptyResultSetCondition12;
             this.DateTimeIntoBigVariantData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
             this.DateTimeOffsetIntoBigVariantData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
             this.TinyIntIntoBigVariantData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
@@ -369,16 +370,17 @@ namespace PxtlCa.BigVariant.Test
             BitIntoBigVariant_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
             notEmptyResultSetCondition5 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition();
             FloatIntoBigVariant_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
-            DoubleIntoBigVariant_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
             notEmptyResultSetCondition6 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition();
+            DoubleIntoBigVariant_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
             notEmptyResultSetCondition7 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition();
             CompareAllNumericTypes_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
+            notEmptyResultSetCondition9 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition();
+            notEmptyResultSetCondition11 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition();
             DecimalIntoBigVariant_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
             notEmptyResultSetCondition8 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition();
-            notEmptyResultSetCondition9 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition();
             MoneyIntoBigVariant_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
             notEmptyResultSetCondition10 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition();
-            notEmptyResultSetCondition11 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition();
+            notEmptyResultSetCondition12 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.NotEmptyResultSetCondition();
             // 
             // DateTimeIntoBigVariant_TestAction
             // 
@@ -402,6 +404,110 @@ namespace PxtlCa.BigVariant.Test
             notEmptyResultSetCondition3.Name = "notEmptyResultSetCondition3";
             notEmptyResultSetCondition3.ResultSet = 1;
             // 
+            // TinyIntIntoBigVariant_TestAction
+            // 
+            TinyIntIntoBigVariant_TestAction.Conditions.Add(notEmptyResultSetCondition2);
+            resources.ApplyResources(TinyIntIntoBigVariant_TestAction, "TinyIntIntoBigVariant_TestAction");
+            // 
+            // notEmptyResultSetCondition2
+            // 
+            notEmptyResultSetCondition2.Enabled = true;
+            notEmptyResultSetCondition2.Name = "notEmptyResultSetCondition2";
+            notEmptyResultSetCondition2.ResultSet = 1;
+            // 
+            // SmallIntIntoBigVariant_TestAction
+            // 
+            resources.ApplyResources(SmallIntIntoBigVariant_TestAction, "SmallIntIntoBigVariant_TestAction");
+            // 
+            // IntIntoBigVariant_TestAction
+            // 
+            IntIntoBigVariant_TestAction.Conditions.Add(notEmptyResultSetCondition4);
+            resources.ApplyResources(IntIntoBigVariant_TestAction, "IntIntoBigVariant_TestAction");
+            // 
+            // notEmptyResultSetCondition4
+            // 
+            notEmptyResultSetCondition4.Enabled = true;
+            notEmptyResultSetCondition4.Name = "notEmptyResultSetCondition4";
+            notEmptyResultSetCondition4.ResultSet = 1;
+            // 
+            // BigIntIntoBigVariant_TestAction
+            // 
+            resources.ApplyResources(BigIntIntoBigVariant_TestAction, "BigIntIntoBigVariant_TestAction");
+            // 
+            // BitIntoBigVariant_TestAction
+            // 
+            BitIntoBigVariant_TestAction.Conditions.Add(notEmptyResultSetCondition5);
+            resources.ApplyResources(BitIntoBigVariant_TestAction, "BitIntoBigVariant_TestAction");
+            // 
+            // notEmptyResultSetCondition5
+            // 
+            notEmptyResultSetCondition5.Enabled = true;
+            notEmptyResultSetCondition5.Name = "notEmptyResultSetCondition5";
+            notEmptyResultSetCondition5.ResultSet = 1;
+            // 
+            // FloatIntoBigVariant_TestAction
+            // 
+            FloatIntoBigVariant_TestAction.Conditions.Add(notEmptyResultSetCondition6);
+            resources.ApplyResources(FloatIntoBigVariant_TestAction, "FloatIntoBigVariant_TestAction");
+            // 
+            // notEmptyResultSetCondition6
+            // 
+            notEmptyResultSetCondition6.Enabled = true;
+            notEmptyResultSetCondition6.Name = "notEmptyResultSetCondition6";
+            notEmptyResultSetCondition6.ResultSet = 1;
+            // 
+            // DoubleIntoBigVariant_TestAction
+            // 
+            DoubleIntoBigVariant_TestAction.Conditions.Add(notEmptyResultSetCondition7);
+            resources.ApplyResources(DoubleIntoBigVariant_TestAction, "DoubleIntoBigVariant_TestAction");
+            // 
+            // notEmptyResultSetCondition7
+            // 
+            notEmptyResultSetCondition7.Enabled = true;
+            notEmptyResultSetCondition7.Name = "notEmptyResultSetCondition7";
+            notEmptyResultSetCondition7.ResultSet = 1;
+            // 
+            // CompareAllNumericTypes_TestAction
+            // 
+            CompareAllNumericTypes_TestAction.Conditions.Add(notEmptyResultSetCondition9);
+            CompareAllNumericTypes_TestAction.Conditions.Add(notEmptyResultSetCondition11);
+            CompareAllNumericTypes_TestAction.Conditions.Add(notEmptyResultSetCondition12);
+            resources.ApplyResources(CompareAllNumericTypes_TestAction, "CompareAllNumericTypes_TestAction");
+            // 
+            // notEmptyResultSetCondition9
+            // 
+            notEmptyResultSetCondition9.Enabled = true;
+            notEmptyResultSetCondition9.Name = "notEmptyResultSetCondition9";
+            notEmptyResultSetCondition9.ResultSet = 1;
+            // 
+            // notEmptyResultSetCondition11
+            // 
+            notEmptyResultSetCondition11.Enabled = true;
+            notEmptyResultSetCondition11.Name = "notEmptyResultSetCondition11";
+            notEmptyResultSetCondition11.ResultSet = 2;
+            // 
+            // DecimalIntoBigVariant_TestAction
+            // 
+            DecimalIntoBigVariant_TestAction.Conditions.Add(notEmptyResultSetCondition8);
+            resources.ApplyResources(DecimalIntoBigVariant_TestAction, "DecimalIntoBigVariant_TestAction");
+            // 
+            // notEmptyResultSetCondition8
+            // 
+            notEmptyResultSetCondition8.Enabled = true;
+            notEmptyResultSetCondition8.Name = "notEmptyResultSetCondition8";
+            notEmptyResultSetCondition8.ResultSet = 1;
+            // 
+            // MoneyIntoBigVariant_TestAction
+            // 
+            MoneyIntoBigVariant_TestAction.Conditions.Add(notEmptyResultSetCondition10);
+            resources.ApplyResources(MoneyIntoBigVariant_TestAction, "MoneyIntoBigVariant_TestAction");
+            // 
+            // notEmptyResultSetCondition10
+            // 
+            notEmptyResultSetCondition10.Enabled = true;
+            notEmptyResultSetCondition10.Name = "notEmptyResultSetCondition10";
+            notEmptyResultSetCondition10.ResultSet = 1;
+            // 
             // DateTimeIntoBigVariantData
             // 
             this.DateTimeIntoBigVariantData.PosttestAction = null;
@@ -420,26 +526,11 @@ namespace PxtlCa.BigVariant.Test
             this.TinyIntIntoBigVariantData.PretestAction = null;
             this.TinyIntIntoBigVariantData.TestAction = TinyIntIntoBigVariant_TestAction;
             // 
-            // TinyIntIntoBigVariant_TestAction
-            // 
-            TinyIntIntoBigVariant_TestAction.Conditions.Add(notEmptyResultSetCondition2);
-            resources.ApplyResources(TinyIntIntoBigVariant_TestAction, "TinyIntIntoBigVariant_TestAction");
-            // 
-            // notEmptyResultSetCondition2
-            // 
-            notEmptyResultSetCondition2.Enabled = true;
-            notEmptyResultSetCondition2.Name = "notEmptyResultSetCondition2";
-            notEmptyResultSetCondition2.ResultSet = 1;
-            // 
             // SmallIntIntoBigVariantData
             // 
             this.SmallIntIntoBigVariantData.PosttestAction = null;
             this.SmallIntIntoBigVariantData.PretestAction = null;
             this.SmallIntIntoBigVariantData.TestAction = SmallIntIntoBigVariant_TestAction;
-            // 
-            // SmallIntIntoBigVariant_TestAction
-            // 
-            resources.ApplyResources(SmallIntIntoBigVariant_TestAction, "SmallIntIntoBigVariant_TestAction");
             // 
             // IntIntoBigVariantData
             // 
@@ -447,26 +538,11 @@ namespace PxtlCa.BigVariant.Test
             this.IntIntoBigVariantData.PretestAction = null;
             this.IntIntoBigVariantData.TestAction = IntIntoBigVariant_TestAction;
             // 
-            // IntIntoBigVariant_TestAction
-            // 
-            IntIntoBigVariant_TestAction.Conditions.Add(notEmptyResultSetCondition4);
-            resources.ApplyResources(IntIntoBigVariant_TestAction, "IntIntoBigVariant_TestAction");
-            // 
-            // notEmptyResultSetCondition4
-            // 
-            notEmptyResultSetCondition4.Enabled = true;
-            notEmptyResultSetCondition4.Name = "notEmptyResultSetCondition4";
-            notEmptyResultSetCondition4.ResultSet = 1;
-            // 
             // BigIntIntoBigVariantData
             // 
             this.BigIntIntoBigVariantData.PosttestAction = null;
             this.BigIntIntoBigVariantData.PretestAction = null;
             this.BigIntIntoBigVariantData.TestAction = BigIntIntoBigVariant_TestAction;
-            // 
-            // BigIntIntoBigVariant_TestAction
-            // 
-            resources.ApplyResources(BigIntIntoBigVariant_TestAction, "BigIntIntoBigVariant_TestAction");
             // 
             // BitIntoBigVariantData
             // 
@@ -474,27 +550,11 @@ namespace PxtlCa.BigVariant.Test
             this.BitIntoBigVariantData.PretestAction = null;
             this.BitIntoBigVariantData.TestAction = BitIntoBigVariant_TestAction;
             // 
-            // BitIntoBigVariant_TestAction
-            // 
-            BitIntoBigVariant_TestAction.Conditions.Add(notEmptyResultSetCondition5);
-            resources.ApplyResources(BitIntoBigVariant_TestAction, "BitIntoBigVariant_TestAction");
-            // 
-            // notEmptyResultSetCondition5
-            // 
-            notEmptyResultSetCondition5.Enabled = true;
-            notEmptyResultSetCondition5.Name = "notEmptyResultSetCondition5";
-            notEmptyResultSetCondition5.ResultSet = 1;
-            // 
             // FloatIntoBigVariantData
             // 
             this.FloatIntoBigVariantData.PosttestAction = null;
             this.FloatIntoBigVariantData.PretestAction = null;
             this.FloatIntoBigVariantData.TestAction = FloatIntoBigVariant_TestAction;
-            // 
-            // FloatIntoBigVariant_TestAction
-            // 
-            FloatIntoBigVariant_TestAction.Conditions.Add(notEmptyResultSetCondition6);
-            resources.ApplyResources(FloatIntoBigVariant_TestAction, "FloatIntoBigVariant_TestAction");
             // 
             // DoubleIntoBigVariantData
             // 
@@ -502,34 +562,11 @@ namespace PxtlCa.BigVariant.Test
             this.DoubleIntoBigVariantData.PretestAction = null;
             this.DoubleIntoBigVariantData.TestAction = DoubleIntoBigVariant_TestAction;
             // 
-            // DoubleIntoBigVariant_TestAction
-            // 
-            DoubleIntoBigVariant_TestAction.Conditions.Add(notEmptyResultSetCondition7);
-            resources.ApplyResources(DoubleIntoBigVariant_TestAction, "DoubleIntoBigVariant_TestAction");
-            // 
-            // notEmptyResultSetCondition6
-            // 
-            notEmptyResultSetCondition6.Enabled = true;
-            notEmptyResultSetCondition6.Name = "notEmptyResultSetCondition6";
-            notEmptyResultSetCondition6.ResultSet = 1;
-            // 
-            // notEmptyResultSetCondition7
-            // 
-            notEmptyResultSetCondition7.Enabled = true;
-            notEmptyResultSetCondition7.Name = "notEmptyResultSetCondition7";
-            notEmptyResultSetCondition7.ResultSet = 1;
-            // 
             // CompareAllNumericTypesData
             // 
             this.CompareAllNumericTypesData.PosttestAction = null;
             this.CompareAllNumericTypesData.PretestAction = null;
             this.CompareAllNumericTypesData.TestAction = CompareAllNumericTypes_TestAction;
-            // 
-            // CompareAllNumericTypes_TestAction
-            // 
-            CompareAllNumericTypes_TestAction.Conditions.Add(notEmptyResultSetCondition9);
-            CompareAllNumericTypes_TestAction.Conditions.Add(notEmptyResultSetCondition11);
-            resources.ApplyResources(CompareAllNumericTypes_TestAction, "CompareAllNumericTypes_TestAction");
             // 
             // DecimalIntoBigVariantData
             // 
@@ -537,45 +574,17 @@ namespace PxtlCa.BigVariant.Test
             this.DecimalIntoBigVariantData.PretestAction = null;
             this.DecimalIntoBigVariantData.TestAction = DecimalIntoBigVariant_TestAction;
             // 
-            // DecimalIntoBigVariant_TestAction
-            // 
-            DecimalIntoBigVariant_TestAction.Conditions.Add(notEmptyResultSetCondition8);
-            resources.ApplyResources(DecimalIntoBigVariant_TestAction, "DecimalIntoBigVariant_TestAction");
-            // 
-            // notEmptyResultSetCondition8
-            // 
-            notEmptyResultSetCondition8.Enabled = true;
-            notEmptyResultSetCondition8.Name = "notEmptyResultSetCondition8";
-            notEmptyResultSetCondition8.ResultSet = 1;
-            // 
-            // notEmptyResultSetCondition9
-            // 
-            notEmptyResultSetCondition9.Enabled = true;
-            notEmptyResultSetCondition9.Name = "notEmptyResultSetCondition9";
-            notEmptyResultSetCondition9.ResultSet = 1;
-            // 
             // MoneyIntoBigVariantData
             // 
             this.MoneyIntoBigVariantData.PosttestAction = null;
             this.MoneyIntoBigVariantData.PretestAction = null;
             this.MoneyIntoBigVariantData.TestAction = MoneyIntoBigVariant_TestAction;
             // 
-            // MoneyIntoBigVariant_TestAction
+            // notEmptyResultSetCondition12
             // 
-            MoneyIntoBigVariant_TestAction.Conditions.Add(notEmptyResultSetCondition10);
-            resources.ApplyResources(MoneyIntoBigVariant_TestAction, "MoneyIntoBigVariant_TestAction");
-            // 
-            // notEmptyResultSetCondition10
-            // 
-            notEmptyResultSetCondition10.Enabled = true;
-            notEmptyResultSetCondition10.Name = "notEmptyResultSetCondition10";
-            notEmptyResultSetCondition10.ResultSet = 1;
-            // 
-            // notEmptyResultSetCondition11
-            // 
-            notEmptyResultSetCondition11.Enabled = true;
-            notEmptyResultSetCondition11.Name = "notEmptyResultSetCondition11";
-            notEmptyResultSetCondition11.ResultSet = 2;
+            notEmptyResultSetCondition12.Enabled = true;
+            notEmptyResultSetCondition12.Name = "notEmptyResultSetCondition12";
+            notEmptyResultSetCondition12.ResultSet = 3;
         }
 
         #endregion

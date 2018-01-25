@@ -195,8 +195,9 @@ WHERE @bitVar.AsVariant = @tinyintvar.AsVariant
 
 SELECT 'success' 
 WHERE @floatVar.AsVariant = @doubleVar.AsVariant 
-	AND @doubleVar.AsVariant = @decimalVar.AsVariant 
-	AND @decimalVar.AsVariant = @moneyVar.AsVariant </value>
+
+SELECT 'success' 
+WHERE @decimalVar.AsVariant = @moneyVar.AsVariant </value>
   </data>
   <data name="DecimalIntoBigVariant_TestAction.SqlScript" xml:space="preserve">
     <value>DECLARE @testInput decimal

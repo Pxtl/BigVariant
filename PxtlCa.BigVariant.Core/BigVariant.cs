@@ -117,6 +117,13 @@ namespace PxtlCa.BigVariant.Core
         /// </summary>
         [SqlFacet(IsFixedLength = false, IsNullable = true, MaxSize = -1)]
         public SqlBinary AsBinary { get { return (SqlBinary)Value; } }
+
+        /// <summary>
+        /// Return the standard CLR object for this type.
+        /// </summary>
+        public object AsClrObject { get {
+                return TypeHelper.GetClrValue(Value);
+            } }
         #endregion
 
         public static BigVariant Null

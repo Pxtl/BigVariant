@@ -46,11 +46,14 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ClrValueTest.cs" />
     <Compile Include="DateTime2BigVariant.cs">
       <SubType>Designer</SubType>
     </Compile>
@@ -88,6 +91,12 @@
     <EmbeddedResource Include="SqlXmlBigVariant.resx">
       <DependentUpon>SqlXmlBigVariant.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PxtlCa.BigVariant.Core\PxtlCa.BigVariant.Core.csproj">
+      <Project>{60343a86-20a9-4a74-bb7f-fb3a46031c40}</Project>
+      <Name>PxtlCa.BigVariant.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

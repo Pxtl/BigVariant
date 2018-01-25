@@ -119,6 +119,13 @@
 
 
 ---
+#### Property BigVariant.AsClrObject
+
+ Return the standard CLR object for this type. 
+
+
+
+---
 #### Method BigVariant.Read(System.IO.BinaryReader)
 
  Implement IBinarySerialize.Read because SQL stores everything as binary even temporarily. Internal plumbing method, don't use. 

@@ -15,6 +15,7 @@ namespace PxtlCa.BigVariant.Core
         internal abstract Object Read(BinaryReader r);
         internal abstract String ToString(Object value);
         internal abstract int GetHashCode(Object value);
+        internal abstract Object GetClrValue(Object value);
     }
 
     internal class SqlNullHelper : SqlTypeHelper
@@ -24,6 +25,10 @@ namespace PxtlCa.BigVariant.Core
         internal override void Write(BinaryWriter w, Object value) { } //noop
         internal override string ToString(Object value) { return "NULL"; }
         internal override int GetHashCode(Object value) { return 0; }
+        internal override object GetClrValue(object sqlValue)
+        {
+            return null;
+        }
     }
 
     internal abstract class TypedSqlTypeHelper<T> : SqlTypeHelper
@@ -50,6 +55,13 @@ namespace PxtlCa.BigVariant.Core
         }
 
         protected abstract int GetHashCodeImpl(T value);
+
+        sealed internal override object GetClrValue(Object sqlValue)
+        {
+            return GetClrValue((T)sqlValue);
+        }
+
+        internal abstract object GetClrValue(T sqlValue);
     }
 
     internal class SqlBinaryHelper : TypedSqlTypeHelper<SqlBinary>
@@ -59,6 +71,7 @@ namespace PxtlCa.BigVariant.Core
         protected override void WriteImpl(BinaryWriter w, SqlBinary value) { w.Write(value.Value); }
         protected override string ToStringImpl(SqlBinary value) { return value.Value.ToString(); }
         protected override int GetHashCodeImpl(SqlBinary value) { return value.Value.GetHashCode(); }
+        internal override object GetClrValue(SqlBinary sqlValue)  { return sqlValue.IsNull ? null : (object)sqlValue.Value; }
     }
 
     internal class SqlByteHelper : TypedSqlTypeHelper<SqlByte>
@@ -68,6 +81,7 @@ namespace PxtlCa.BigVariant.Core
         protected override void WriteImpl(BinaryWriter w, SqlByte value) { w.Write(value.Value); }
         protected override string ToStringImpl(SqlByte value) { return value.Value.ToString(); }
         protected override int GetHashCodeImpl(SqlByte value) { return value.Value.GetHashCode(); }
+        internal override object GetClrValue(SqlByte sqlValue) { return sqlValue.IsNull ? null : (object)sqlValue.Value; }
     }
 
     internal class SqlBooleanHelper : TypedSqlTypeHelper<SqlBoolean>
@@ -77,6 +91,7 @@ namespace PxtlCa.BigVariant.Core
         protected override void WriteImpl(BinaryWriter w, SqlBoolean value) { w.Write(value.Value); }
         protected override string ToStringImpl(SqlBoolean value) { return value.Value.ToString(); }
         protected override int GetHashCodeImpl(SqlBoolean value) { return value.Value.GetHashCode(); }
+        internal override object GetClrValue(SqlBoolean sqlValue) { return sqlValue.IsNull ? null : (object)sqlValue.Value; }
     }
 
     internal class SqlDateTimeHelper : TypedSqlTypeHelper<SqlDateTime>
@@ -92,6 +107,7 @@ namespace PxtlCa.BigVariant.Core
         }
         protected override string ToStringImpl(SqlDateTime value) { return value.Value.ToString(); }
         protected override int GetHashCodeImpl(SqlDateTime value) { return value.Value.GetHashCode(); }
+        internal override object GetClrValue(SqlDateTime sqlValue) { return sqlValue.IsNull ? null : (object)sqlValue.Value; }
     }
 
     internal class DateTimeHelper : TypedSqlTypeHelper<DateTime>
@@ -110,6 +126,7 @@ namespace PxtlCa.BigVariant.Core
         }
         protected override string ToStringImpl(DateTime value) { return value.ToString(); }
         protected override int GetHashCodeImpl(DateTime value) { return value.GetHashCode(); }
+        internal override object GetClrValue(DateTime sqlValue) { return sqlValue; }
     }
 
     internal class DateTimeOffsetHelper : TypedSqlTypeHelper<DateTimeOffset>
@@ -128,6 +145,7 @@ namespace PxtlCa.BigVariant.Core
         }
         protected override string ToStringImpl(DateTimeOffset value) { return value.ToString(); }
         protected override int GetHashCodeImpl(DateTimeOffset value) { return value.GetHashCode(); }
+        internal override object GetClrValue(DateTimeOffset sqlValue) { return sqlValue; }
     }
 
     internal class SqlDecimalHelper : TypedSqlTypeHelper<SqlDecimal>
@@ -157,6 +175,7 @@ namespace PxtlCa.BigVariant.Core
         }
         protected override string ToStringImpl(SqlDecimal value) { return value.Value.ToString(); }
         protected override int GetHashCodeImpl(SqlDecimal value) { return value.Value.GetHashCode(); }
+        internal override object GetClrValue(SqlDecimal sqlValue) { return sqlValue.IsNull ? null : (object)sqlValue.Value; }
     }
 
     internal class SqlDoubleHelper : TypedSqlTypeHelper<SqlDouble>
@@ -166,6 +185,7 @@ namespace PxtlCa.BigVariant.Core
         protected override void WriteImpl(BinaryWriter w, SqlDouble value) { w.Write(value.Value); }
         protected override string ToStringImpl(SqlDouble value) { return value.Value.ToString(); }
         protected override int GetHashCodeImpl(SqlDouble value) { return value.Value.GetHashCode(); }
+        internal override object GetClrValue(SqlDouble sqlValue) { return sqlValue.IsNull ? null : (object)sqlValue.Value; }
     }
 
     internal class SqlGuidHelper : TypedSqlTypeHelper<SqlGuid>
@@ -175,6 +195,7 @@ namespace PxtlCa.BigVariant.Core
         protected override void WriteImpl(BinaryWriter w, SqlGuid value) { w.Write(value.ToByteArray()); }
         protected override string ToStringImpl(SqlGuid value) { return value.Value.ToString(); }
         protected override int GetHashCodeImpl(SqlGuid value) { return value.Value.GetHashCode(); }
+        internal override object GetClrValue(SqlGuid sqlValue) { return sqlValue.IsNull ? null : (object)sqlValue.Value; }
     }
 
     internal class SqlMoneyHelper : TypedSqlTypeHelper<SqlMoney>
@@ -184,6 +205,7 @@ namespace PxtlCa.BigVariant.Core
         protected override void WriteImpl(BinaryWriter w, SqlMoney value) { w.Write(value.Value); }
         protected override string ToStringImpl(SqlMoney value) { return value.Value.ToString(); }
         protected override int GetHashCodeImpl(SqlMoney value) { return value.Value.GetHashCode(); }
+        internal override object GetClrValue(SqlMoney sqlValue) { return sqlValue.IsNull ? null : (object)sqlValue.Value; }
     }
 
     internal class SqlInt16Helper : TypedSqlTypeHelper<SqlInt16>
@@ -193,6 +215,7 @@ namespace PxtlCa.BigVariant.Core
         protected override void WriteImpl(BinaryWriter w, SqlInt16 value) { w.Write(value.Value); }
         protected override string ToStringImpl(SqlInt16 value) { return value.Value.ToString(); }
         protected override int GetHashCodeImpl(SqlInt16 value) { return value.Value.GetHashCode(); }
+        internal override object GetClrValue(SqlInt16 sqlValue) { return sqlValue.IsNull ? null : (object)sqlValue.Value; }
     }
 
     internal class SqlInt32Helper : TypedSqlTypeHelper<SqlInt32>
@@ -202,6 +225,7 @@ namespace PxtlCa.BigVariant.Core
         protected override void WriteImpl(BinaryWriter w, SqlInt32 value) { w.Write(value.Value); }
         protected override string ToStringImpl(SqlInt32 value) { return value.Value.ToString(); }
         protected override int GetHashCodeImpl(SqlInt32 value) { return value.Value.GetHashCode(); }
+        internal override object GetClrValue(SqlInt32 sqlValue) { return sqlValue.IsNull ? null : (object)sqlValue.Value; }
     }
     internal class SqlInt64Helper : TypedSqlTypeHelper<SqlInt64>
     {
@@ -210,6 +234,7 @@ namespace PxtlCa.BigVariant.Core
         protected override void WriteImpl(BinaryWriter w, SqlInt64 value) { w.Write(value.Value); }
         protected override string ToStringImpl(SqlInt64 value) { return value.Value.ToString(); }
         protected override int GetHashCodeImpl(SqlInt64 value) { return value.Value.GetHashCode(); }
+        internal override object GetClrValue(SqlInt64 sqlValue) { return sqlValue.IsNull ? null : (object)sqlValue.Value; }
     }
     internal class SqlStringHelper : TypedSqlTypeHelper<SqlString>
     {
@@ -224,6 +249,7 @@ namespace PxtlCa.BigVariant.Core
         }
         protected override string ToStringImpl(SqlString value) { return value.Value; }
         protected override int GetHashCodeImpl(SqlString value) { return value.Value.GetHashCode(); }
+        internal override object GetClrValue(SqlString sqlValue) { return sqlValue.IsNull ? null : (object)sqlValue.Value; }
     }
     internal class SqlSingleHelper : TypedSqlTypeHelper<SqlSingle>
     {
@@ -232,6 +258,7 @@ namespace PxtlCa.BigVariant.Core
         protected override void WriteImpl(BinaryWriter w, SqlSingle value) { w.Write(value.Value); }
         protected override string ToStringImpl(SqlSingle value) { return value.Value.ToString(); }
         protected override int GetHashCodeImpl(SqlSingle value) { return value.Value.GetHashCode(); }
+        internal override object GetClrValue(SqlSingle sqlValue) { return sqlValue.IsNull ? null : (object)sqlValue.Value; }
     }
     internal class SqlXmlHelper : TypedSqlTypeHelper<SqlXml>
     {
@@ -246,5 +273,6 @@ namespace PxtlCa.BigVariant.Core
         }
         protected override string ToStringImpl(SqlXml value) { return value.Value; }
         protected override int GetHashCodeImpl(SqlXml value) { return value.Value.GetHashCode(); }
+        internal override object GetClrValue(SqlXml sqlValue) { return sqlValue.IsNull ? null : (object)sqlValue.Value; }
     }
 }
