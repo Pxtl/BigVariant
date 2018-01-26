@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>PxtlCa.BigVariant.Core</id>
-        <version>0.2.5958.1683</version>
+        <version>0.2.6599.36044</version>
         <title>PxtlCa.BigVariant.Core</title>
         <authors>Martin Zarate</authors>
         <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
@@ -14,12 +14,6 @@
         <language />
     </metadata>
     <files>
-        <file src="PxtlCa.BigVariant.Core\bin\Debug\PxtlCa.BigVariant.Core.dll" target="lib\PxtlCa.BigVariant.Core.dll" />
-        <file src="PxtlCa.BigVariant.Core\bin\Debug\PxtlCa.BigVariant.Core.pdb" target="lib\PxtlCa.BigVariant.Core.pdb" />
-        <file src="PxtlCa.BigVariant.Core\BigVariant.cs" target="src\BigVariant.cs" />
-        <file src="PxtlCa.BigVariant.Core\SqlTypeEnum.cs" target="src\SqlTypeEnum.cs" />
-        <file src="PxtlCa.BigVariant.Core\SqlTypeExtensions.cs" target="src\SqlTypeExtensions.cs" />
-        <file src="PxtlCa.BigVariant.Core\SqlTypeHelpers.cs" target="src\SqlTypeHelpers.cs" />
-        <file src="PxtlCa.BigVariant.Core\UserDefinedFunctions_BigVariant.cs" target="src\UserDefinedFunctions_BigVariant.cs" />
+        <file src="PxtlCa.BigVariant.Core\bin\Release\PxtlCa.BigVariant.Core.dll" target="lib\PxtlCa.BigVariant.Core.dll" />
     </files>
 </package>
