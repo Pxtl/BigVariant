@@ -7,6 +7,13 @@
 
 
 ---
+#### Property BigVariant.SqlTypeEnum
+
+ CLR-API property to fetch the SqlType of the underlying Value as an Enum 
+
+
+
+---
 #### Property BigVariant.Type
 
  The SQL CLR Type of the BigVariant, as a String accessible from SQL. See https://msdn.microsoft.com/en-us/library/ms131092.aspx for information about the types. 
@@ -121,7 +128,7 @@
 ---
 #### Property BigVariant.AsClrObject
 
- Return the standard CLR object for this type. 
+ CLR-API property. Return the standard CLR object for this type. 
 
 
 

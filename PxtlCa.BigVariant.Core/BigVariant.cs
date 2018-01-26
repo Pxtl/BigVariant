@@ -26,7 +26,6 @@ namespace PxtlCa.BigVariant.Core
         
         //SQL CLR Type of the BigVariant
         private SqlTypeEnum _SqlTypeEnum;
-        internal SqlTypeEnum SqlTypeEnum { get { return _SqlTypeEnum; } }
 
         internal SqlTypeHelper TypeHelper { get { return SqlTypeExtensions.GetHelper(SqlTypeEnum); } }
 
@@ -37,6 +36,11 @@ namespace PxtlCa.BigVariant.Core
         public bool IsNull { get { return _IsNull; } }
 
         #region public properties
+        /// <summary>
+        /// CLR-API property to fetch the SqlType of the underlying Value as an Enum
+        /// </summary>
+        public SqlTypeEnum SqlTypeEnum { get { return _SqlTypeEnum; } }
+
         /// <summary>
         /// The SQL CLR Type of the BigVariant, as a String accessible from SQL.
         /// See https://msdn.microsoft.com/en-us/library/ms131092.aspx for information about the types.
@@ -119,7 +123,7 @@ namespace PxtlCa.BigVariant.Core
         public SqlBinary AsBinary { get { return (SqlBinary)Value; } }
 
         /// <summary>
-        /// Return the standard CLR object for this type.
+        /// CLR-API property.  Return the standard CLR object for this type.
         /// </summary>
         public object AsClrObject { get {
                 return TypeHelper.GetClrValue(Value);
