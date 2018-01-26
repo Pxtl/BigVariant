@@ -253,3 +253,4 @@ paket-files/
 # SSDT artifacts
 Model.xml
 *.FileListAbsolute.txt
+*.jfm
